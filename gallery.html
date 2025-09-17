@@ -1,0 +1,386 @@
+<!doctype html>
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JVQS05TLKQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-JVQS05TLKQ');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH">
+
+    <title>Laravel</title>
+
+    <!-- Scripts -->
+    <script src="js/app.js" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="http://fonts.gstatic.com/">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="css/app.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class=back>
+                <div id='header'>
+            <a id=logo href='index.html'>
+                <div class="header_logo_base"><img class="header_logo" src="storage/materials/20250515_165557_pgcロゴ黒.png" style:"300px" />
+                </div>
+            </a>
+            <div class="header_display_flex">
+                <div id='header_menu_base'>
+                    <!-- Left Side Of Navbar -->
+
+                    <!-- Right Side Of Navbar -->
+                    <!-- Authentication Links -->
+
+                    <a href='gallery.html' class='menu'>gallery</a>
+                    <!-- <a href='/all/exhibition' class='menu'>exhibition</a> -->
+                    <a href='store.html' class='menu'>store</a>
+
+
+                                        <a class='menu' href="login.html">login</a>
+                    <a class='menu' href="register.html">新規登録</a>
+                    
+                    <a class="cart_logo" href="cart.html">
+                        🛒
+                    </a>
+
+
+
+                </div>
+
+                <a class="user_icon_base" href="mypage.html" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <!-- ユーザーアイコン表示 -->
+                    
+                                        <!-- 以上ユーザーアイコン表示 -->
+                </a>
+
+
+
+
+
+                <!-- グループアイコン表示 -->
+                                                    <!-- 以上グループアイコン表示 -->
+                </a>
+
+            </div>
+            <div id='header_space'></div>
+        </div>
+
+
+        <main class="py-4">
+            
+
+<header class="category">
+    <h1 class="category_name">gallery</h1>
+
+    <div class="search" role="search">
+        <a class="new_post" href="./photo/create">新規投稿</a>
+        <form class="search_form" action="./search/user" method="POST" aria-label="ユーザー検索">
+            <input type="hidden" name="_token" value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH">            <label for="gallery-keyword" class="search_title">search</label>
+            <input id="gallery-keyword" name="keyword" type="text" />
+        </form>
+    </div>
+</header>
+
+<figure class="main_image_base">
+    <img
+        class="main_image"
+        src="storage/materials/20250516_092304_スクリーンショット%202025-05-16%2018.15.54.png"
+        alt="ギャラリーのメインビジュアル"
+    />
+</figure>
+
+<main class="all_back">
+    <section class="all_back" aria-label="ギャラリー一覧">
+        <div class="gallery_title_base"></div>
+
+        <!-- グリッド -->
+        <section class="back_base" role="list">
+                            <article class="block_base" role="listitem">
+                    <figure class="photo_frame_base">
+                        <img class="photo_frame" src="storage/materials/20250509_074032_フレームテスト.png" alt="" aria-hidden="true" />
+                        <div class="photo_base">
+                            <img
+                                class="photo"
+                                id="40"
+                                src="storage/images/20250914_121357__i_icon_00055_icon_000550_256.png"
+                                alt="投稿写真 40"
+                            />
+                        </div>
+                    </figure>
+                </article>
+                            <article class="block_base" role="listitem">
+                    <figure class="photo_frame_base">
+                        <img class="photo_frame" src="storage/materials/20250509_074032_フレームテスト.png" alt="" aria-hidden="true" />
+                        <div class="photo_base">
+                            <img
+                                class="photo"
+                                id="39"
+                                src="storage/images/20250914_121311_写真追加アイコン.png"
+                                alt="投稿写真 39"
+                            />
+                        </div>
+                    </figure>
+                </article>
+                            <article class="block_base" role="listitem">
+                    <figure class="photo_frame_base">
+                        <img class="photo_frame" src="storage/materials/20250509_074032_フレームテスト.png" alt="" aria-hidden="true" />
+                        <div class="photo_base">
+                            <img
+                                class="photo"
+                                id="38"
+                                src="storage/images/20250913_072528__i_icon_00055_icon_000550_256.png"
+                                alt="投稿写真 38"
+                            />
+                        </div>
+                    </figure>
+                </article>
+                            <article class="block_base" role="listitem">
+                    <figure class="photo_frame_base">
+                        <img class="photo_frame" src="storage/materials/20250509_074032_フレームテスト.png" alt="" aria-hidden="true" />
+                        <div class="photo_base">
+                            <img
+                                class="photo"
+                                id="34"
+                                src="storage/images/20250520_113606_R0010768.jpg"
+                                alt="投稿写真 34"
+                            />
+                        </div>
+                    </figure>
+                </article>
+                            <article class="block_base" role="listitem">
+                    <figure class="photo_frame_base">
+                        <img class="photo_frame" src="storage/materials/20250509_074032_フレームテスト.png" alt="" aria-hidden="true" />
+                        <div class="photo_base">
+                            <img
+                                class="photo"
+                                id="30"
+                                src="storage/images/20250519_210008_R0008221.jpg"
+                                alt="投稿写真 30"
+                            />
+                        </div>
+                    </figure>
+                </article>
+                            <article class="block_base" role="listitem">
+                    <figure class="photo_frame_base">
+                        <img class="photo_frame" src="storage/materials/20250509_074032_フレームテスト.png" alt="" aria-hidden="true" />
+                        <div class="photo_base">
+                            <img
+                                class="photo"
+                                id="29"
+                                src="storage/images/20250519_205757_IMG_3894.jpg"
+                                alt="投稿写真 29"
+                            />
+                        </div>
+                    </figure>
+                </article>
+                            <article class="block_base" role="listitem">
+                    <figure class="photo_frame_base">
+                        <img class="photo_frame" src="storage/materials/20250509_074032_フレームテスト.png" alt="" aria-hidden="true" />
+                        <div class="photo_base">
+                            <img
+                                class="photo"
+                                id="28"
+                                src="storage/images/20250518_191834_IMG_4339.jpg"
+                                alt="投稿写真 28"
+                            />
+                        </div>
+                    </figure>
+                </article>
+                            <article class="block_base" role="listitem">
+                    <figure class="photo_frame_base">
+                        <img class="photo_frame" src="storage/materials/20250509_074032_フレームテスト.png" alt="" aria-hidden="true" />
+                        <div class="photo_base">
+                            <img
+                                class="photo"
+                                id="27"
+                                src="storage/images/20250518_191408_IMG_0744.jpg"
+                                alt="投稿写真 27"
+                            />
+                        </div>
+                    </figure>
+                </article>
+                            <article class="block_base" role="listitem">
+                    <figure class="photo_frame_base">
+                        <img class="photo_frame" src="storage/materials/20250509_074032_フレームテスト.png" alt="" aria-hidden="true" />
+                        <div class="photo_base">
+                            <img
+                                class="photo"
+                                id="26"
+                                src="storage/images/20250518_143313_R0000513.jpg"
+                                alt="投稿写真 26"
+                            />
+                        </div>
+                    </figure>
+                </article>
+                            <article class="block_base" role="listitem">
+                    <figure class="photo_frame_base">
+                        <img class="photo_frame" src="storage/materials/20250509_074032_フレームテスト.png" alt="" aria-hidden="true" />
+                        <div class="photo_base">
+                            <img
+                                class="photo"
+                                id="20"
+                                src="storage/images/20250517_161513_20231103205350938.jpg"
+                                alt="投稿写真 20"
+                            />
+                        </div>
+                    </figure>
+                </article>
+                            <article class="block_base" role="listitem">
+                    <figure class="photo_frame_base">
+                        <img class="photo_frame" src="storage/materials/20250509_074032_フレームテスト.png" alt="" aria-hidden="true" />
+                        <div class="photo_base">
+                            <img
+                                class="photo"
+                                id="19"
+                                src="storage/images/20250516_103800_R0011223%202.jpg"
+                                alt="投稿写真 19"
+                            />
+                        </div>
+                    </figure>
+                </article>
+                            <article class="block_base" role="listitem">
+                    <figure class="photo_frame_base">
+                        <img class="photo_frame" src="storage/materials/20250509_074032_フレームテスト.png" alt="" aria-hidden="true" />
+                        <div class="photo_base">
+                            <img
+                                class="photo"
+                                id="18"
+                                src="storage/images/20250516_103604_R0010768.jpg"
+                                alt="投稿写真 18"
+                            />
+                        </div>
+                    </figure>
+                </article>
+                            <article class="block_base" role="listitem">
+                    <figure class="photo_frame_base">
+                        <img class="photo_frame" src="storage/materials/20250509_074032_フレームテスト.png" alt="" aria-hidden="true" />
+                        <div class="photo_base">
+                            <img
+                                class="photo"
+                                id="17"
+                                src="storage/images/20250516_103436_20231108213111686.jpg"
+                                alt="投稿写真 17"
+                            />
+                        </div>
+                    </figure>
+                </article>
+                            <article class="block_base" role="listitem">
+                    <figure class="photo_frame_base">
+                        <img class="photo_frame" src="storage/materials/20250509_074032_フレームテスト.png" alt="" aria-hidden="true" />
+                        <div class="photo_base">
+                            <img
+                                class="photo"
+                                id="16"
+                                src="storage/images/20250516_102343_IMG_4343.jpg"
+                                alt="投稿写真 16"
+                            />
+                        </div>
+                    </figure>
+                </article>
+                    </section>
+
+        <!-- モーダル（既存JS対応） -->
+        <div class="myModal" role="dialog" aria-modal="true" aria-labelledby="galleryTitle">
+  <div class="modal">
+    <div class="modalContent">
+        <!-- 以下caption関連 -->
+      <div class="caption-base">
+        <div class="caption-info">
+          <div id="galleryTitle"></div>
+          <div id="galleryComment"></div>
+          <div class="caption-cart">
+          <form action="./cart/add" method="POST" aria-label="カートに追加" onsubmit="alert('カートに追加しました。');">
+          <input type="hidden" name="_token" value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH">          <input id="cart_id"   type="hidden" name="id"    value="#">
+          <input id="cart_name" type="hidden" name="name"  value="#">
+          <input type="hidden" name="price" value="500">
+          <input id="cart-quantity"type="number" name="quantity" value="1" min="1" aria-label="数量">
+          <input id="cart_photo" type="hidden" name="photo" value="#">
+          <button class="add-cart"type="submit">カートに追加</button>
+        </form>   
+        </div>
+        </div>
+
+        <div class="caption-user">
+          <a id="userIcon" class="user_icon_base" href="gallery.html#">
+            <img class="modal_user_icon" id="js_user_icon" alt="投稿者アイコン" />
+          </a>
+          <a id="userPage" class="galleryUserName" href="gallery.html#">ユーザーページ</a>
+
+          <a id="postDelete" class="none_input" href="gallery.html#" onclick='return confirm("本当に削除しますか？")'>削除</a>
+          <div class="download-disabled" aria-disabled="true" title="静的サイトでは無効です">ダウンロードは静的サイトでは無効です</div>
+        </div>
+        
+      </div>
+        <!-- 以下photo関連 -->
+      <div class="modal_main_photo">
+        <figure class="modalPhoto_frame_base">
+          <img class="modalPhoto_frame" src="storage/materials/20250509_074032_フレームテスト.png" alt="" aria-hidden="true" />
+          <div class="modalPhoto_base">
+            <img class="modalPhoto" id="js-modal-img" alt="選択中の写真" />
+          </div>
+        </figure>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+    </section>
+</main>
+
+        </main>
+    </div>
+    <div id='footer'>
+        <div id='logo_footer'>
+            <img class="logo_footer" src="storage/materials/20250515_165603_pgcロゴ白.png" style:"300px" />
+        </div>
+        <div class='menu_footer_base'>
+            <div class='menu_footer'>
+                <a href='gallery.html'>gallery</a>
+            </div>
+            <!-- <div class='menu_footer'>
+                <a href='/all/exhibition'>exhibition</a>
+            </div> -->
+            <div class='menu_footer'>
+                <a href='./new_post'>store</a>
+            </div>
+            <div class='menu_footer'>
+                <a href='./new_post'>cart</a>
+            </div>
+        </div>
+        <div class='menu_footer_base'>
+            <a class='logo_sns_base' href="https://www.instagram.com/tomo_0404tom?igsh=MTFrNjlwMHpuNHlqZw%3D%3D&utm_source=qr">
+                <img class="logo_sns" src="storage/materials/20250516_170454_Instagram_Glyph_Black.png" style:"300px" />
+            </a>
+            <div class='logo_x_base'>
+                <img class="logo_sns" src="storage/materials/20250515_162753_logo-black.png" style:"300px" />
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
