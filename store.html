@@ -1,24 +1,28 @@
-<!doctype html>
-
-<head>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JVQS05TLKQ"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JVQS05TLKQ"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-JVQS05TLKQ');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-JVQS05TLKQ");
     </script>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH">
+    <meta
+      name="csrf-token"
+      content="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
+    />
 
     <title>Laravel</title>
 
@@ -26,208 +30,317 @@
     <script src="js/app.js" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="http://fonts.gstatic.com/">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="dns-prefetch" href="http://fonts.gstatic.com/" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+    />
 
     <!-- Styles -->
-    <link href="css/app.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet" />
+  </head>
 
-</head>
+  <body>
+    <div class="back">
+      <div id="header">
+        <a id="logo" href="/PfSite_20250916/index.html">
+          <div class="header_logo_base">
+            <img
+              class="header_logo"
+              src="/PfSite_20250916/storage/materials/20250515_165557_logo_black.png"
+              alt="PGCロゴ"
+            />
+          </div>
+        </a>
 
-<body>
-    <div class=back>
-                <div id='header'>
-            <a id="logo" href="/PfSite_20250916/index.html">
-        <div class="header_logo_base">
-          <img
-            class="header_logo"
-            src="/PfSite_20250916/storage/materials/20250515_165557_logo_black.png"
-            style="width:300px"
-            alt="PGCロゴ"
-          />
-        </div>
-      </a>
-            <div class="header_display_flex">
-                <div id='header_menu_base'>
-                    <!-- Left Side Of Navbar -->
+        <div class="header_display_flex">
+          <div id="header_menu_base">
+            <!-- Left Side Of Navbar -->
 
-                    <!-- Right Side Of Navbar -->
-                    <!-- Authentication Links -->
+            <!-- Right Side Of Navbar -->
+            <!-- Authentication Links -->
+            <a href="gallery.html" class="menu">gallery</a>
+            <!-- <a href="/all/exhibition" class="menu">exhibition</a> -->
+            <a href="store.html" class="menu">store</a>
 
-                    <a href='gallery.html' class='menu'>gallery</a>
-                    <!-- <a href='/all/exhibition' class='menu'>exhibition</a> -->
-                    <a href='store.html' class='menu'>store</a>
+            <a class="menu" href="login.html">login</a>
+            <a class="menu" href="register.html">新規登録</a>
 
+            <a class="cart_logo" href="cart.html">🛒</a>
+          </div>
 
-                                        <a class='menu' href="login.html">login</a>
-                    <a class='menu' href="register.html">新規登録</a>
-                    
-                    <a class="cart_logo" href="cart.html">
-                        🛒
-                    </a>
+          <a
+            class="user_icon_base"
+            href="mypage.html"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            v-pre
+          >
+            <!-- ユーザーアイコン表示 -->
+            <!-- 以上ユーザーアイコン表示 -->
+          </a>
 
-
-
-                </div>
-
-                <a class="user_icon_base" href="mypage.html" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    <!-- ユーザーアイコン表示 -->
-                    
-                                        <!-- 以上ユーザーアイコン表示 -->
-                </a>
-
-
-
-
-
-                <!-- グループアイコン表示 -->
-                                                    <!-- 以上グループアイコン表示 -->
-                </a>
-
-            </div>
-            <div id='header_space'></div>
+          <!-- グループアイコン表示 -->
+          <!-- 以上グループアイコン表示 -->
+          <!-- ※ ここに余分な </a> がありましたが削除しました -->
         </div>
 
+        <div id="header_space"></div>
+      </div>
 
-        <main class="py-4">
-            
-<div class='category'>
-    <div class='category_name'>store</div>
-    <div class='search'>
-
-        <div class='search_title'>search</div>
-        <form class='search_form' action="./search/user" method="POST">
-            <input type="hidden" name="_token" value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH">            <input name="keyword" type="text">
-        </form>
-    </div>
-</div>
-
-<div class="all_back">
-    <div class="all_back">
-        <!-- ------------以下商品------------ -->
-        <div class='exhibition_type'>products
+      <main class="py-4">
+        <div class="category">
+          <div class="category_name">store</div>
+          <div class="search">
+            <div class="search_title">search</div>
+            <form class="search_form" action="./search/user" method="POST">
+              <input
+                type="hidden"
+                name="_token"
+                value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
+              />
+              <input name="keyword" type="text" />
+            </form>
+          </div>
         </div>
-        <div>Photo Flame</div>
-        <div class='all_main_product_base'>
-            <div class='main_product_base'>
+
+        <div class="all_back">
+          <div class="all_back">
+            <!-- ------------以下商品------------ -->
+            <div class="exhibition_type">products</div>
+            <div>Photo Flame</div>
+
+            <div class="all_main_product_base">
+              <div class="main_product_base">
                 <div class="main_sub_base">
-                    <img class="sub_image" src="storage/materials/20250521_045426_pgcフレームメイン画像.jpg" style:"300px" />
+                  <img
+                    class="sub_image"
+                    src="/PfSite_20250916/storage/materials/20250521_045426_pgcフレームメイン画像.jpg"
+                  />
                 </div>
                 <div class="sub_sub_base">
-                    <img class="sub_sub_image" src="storage/materials/20250520_091422_R0001648.jpg" style:"300px" />
-                    <img class="sub_sub_image" src="storage/materials/20250520_091417_R0001651.jpg" style:"300px" />
+                  <img
+                    class="sub_sub_image"
+                    src="/PfSite_20250916/storage/materials/20250520_091422_R0001648.jpg"
+                  />
+                  <img
+                    class="sub_sub_image"
+                    src="/PfSite_20250916/storage/materials/20250520_091417_R0001651.jpg"
+                  />
                 </div>
-            </div>
+              </div>
 
-            <div class='store_cart'>
+              <div class="store_cart">
                 <div>フォトフレーム</div>
                 <form action="./cart/add" method="POST">
-                    <input type="hidden" name="_token" value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH">                    <input id='cart_id' type="hidden" name="id" value="item_1">
-                    <input id='cart_name' type="hidden" name="name" value="フォトフレーム"><!--商品名 -->
-                    <input type="hidden" name="price" value="5000">
-                    <input type="number" name="quantity" value="1" min="1">
-                    <input id='cart_photo' type="hidden" name="photo" value=20250521_045426_pgcフレームメイン画像.jpg>
-                    <button type="submit">カートに追加</button>
+                  <input
+                    type="hidden"
+                    name="_token"
+                    value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
+                  />
+                  <input id="cart_id" type="hidden" name="id" value="item_1" />
+                  <input
+                    id="cart_name"
+                    type="hidden"
+                    name="name"
+                    value="フォトフレーム"
+                  /><!--商品名 -->
+                  <input type="hidden" name="price" value="5000" />
+                  <input type="number" name="quantity" value="1" min="1" />
+                  <input
+                    id="cart_photo"
+                    type="hidden"
+                    name="photo"
+                    value="20250521_045426_pgcフレームメイン画像.jpg"
+                  />
+                  <button type="submit">カートに追加</button>
                 </form>
+              </div>
             </div>
-        </div>
+          </div>
 
+          <div>Photo Base</div>
 
-
-    </div>
-
-
-
-    <div>Photo Base</div>
-    <div class='all_main_product_base'>
-        <div class="main_sub_base">
-            <div class="sub_images">
-                <img class="sub_image_base" src="storage/materials/20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg" style:"300px" />
+          <div class="all_main_product_base">
+            <div class="main_sub_base">
+              <div class="sub_images">
+                <img
+                  class="sub_image_base"
+                  src="/PfSite_20250916/storage/materials/20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg"
+                />
                 <div>
-                    <div>L版マット紙</div>
-                    <form action="./cart/add" method="POST">
-                        <input type="hidden" name="_token" value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH">                        <input id='cart_id' type="hidden" name="id" value="item_2">
-                        <input id='cart_name' type="hidden" name="name" value="L版マット紙"><!--商品名 -->
-                        <input type="hidden" name="price" value="500">
-                        <input type="number" name="quantity" value="1" min="1">
-                        <input id='cart_photo' type="hidden" name="photo" value=20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg>
-                        <button type="submit">カートに追加</button>
-                    </form>
+                  <div>L版マット紙</div>
+                  <form action="./cart/add" method="POST">
+                    <input
+                      type="hidden"
+                      name="_token"
+                      value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
+                    />
+                    <input
+                      id="cart_id"
+                      type="hidden"
+                      name="id"
+                      value="item_2"
+                    />
+                    <input
+                      id="cart_name"
+                      type="hidden"
+                      name="name"
+                      value="L版マット紙"
+                    /><!--商品名 -->
+                    <input type="hidden" name="price" value="500" />
+                    <input type="number" name="quantity" value="1" min="1" />
+                    <input
+                      id="cart_photo"
+                      type="hidden"
+                      name="photo"
+                      value="20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg"
+                    />
+                    <button type="submit">カートに追加</button>
+                  </form>
                 </div>
-            </div>
-            <div class="sub_images">
-                <img class="sub_image_base" src="storage/materials/20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg" style:"300px" />
+              </div>
+
+              <div class="sub_images">
+                <img
+                  class="sub_image_base"
+                  src="/PfSite_20250916/storage/materials/20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg"
+                />
                 <div>
-                    <div>2L版マット紙</div>
-                    <form action="./cart/add" method="POST">
-                        <input type="hidden" name="_token" value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH">                        <input id='cart_id' type="hidden" name="id" value="item_3">
-                        <input id='cart_name' type="hidden" name="name" value="2L版マット紙"><!--商品名 -->
-                        <input type="hidden" name="price" value="500">
-                        <input type="number" name="quantity" value="1" min="1">
-                        <input id='cart_photo' type="hidden" name="photo" value=20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg>
-                        <button type="submit">カートに追加</button>
-                    </form>
+                  <div>2L版マット紙</div>
+                  <form action="./cart/add" method="POST">
+                    <input
+                      type="hidden"
+                      name="_token"
+                      value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
+                    />
+                    <input
+                      id="cart_id"
+                      type="hidden"
+                      name="id"
+                      value="item_3"
+                    />
+                    <input
+                      id="cart_name"
+                      type="hidden"
+                      name="name"
+                      value="2L版マット紙"
+                    /><!--商品名 -->
+                    <input type="hidden" name="price" value="500" />
+                    <input type="number" name="quantity" value="1" min="1" />
+                    <input
+                      id="cart_photo"
+                      type="hidden"
+                      name="photo"
+                      value="20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg"
+                    />
+                    <button type="submit">カートに追加</button>
+                  </form>
                 </div>
-            </div>
-            <div class="sub_images">
-                <img class="sub_image_base" src="storage/materials/20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg" style:"300px" />
+              </div>
+
+              <div class="sub_images">
+                <img
+                  class="sub_image_base"
+                  src="/PfSite_20250916/storage/materials/20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg"
+                />
                 <div>
-                    <div>チェキ用マット紙</div>
-                    <form action="./cart/add" method="POST">
-                        <input type="hidden" name="_token" value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH">                        <input id='cart_id' type="hidden" name="id" value="item_4">
-                        <input id='cart_name' type="hidden" name="name" value="チェキ用マット紙"><!--商品名 -->
-                        <input type="hidden" name="price" value="500">
-                        <input type="number" name="quantity" value="1" min="1">
-                        <input id='cart_photo' type="hidden" name="photo" value=20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg>
-                        <button type="submit">カートに追加</button>
-                    </form>
+                  <div>チェキ用マット紙</div>
+                  <form action="./cart/add" method="POST">
+                    <input
+                      type="hidden"
+                      name="_token"
+                      value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
+                    />
+                    <input
+                      id="cart_id"
+                      type="hidden"
+                      name="id"
+                      value="item_4"
+                    />
+                    <input
+                      id="cart_name"
+                      type="hidden"
+                      name="name"
+                      value="チェキ用マット紙"
+                    /><!--商品名 -->
+                    <input type="hidden" name="price" value="500" />
+                    <input type="number" name="quantity" value="1" min="1" />
+                    <input
+                      id="cart_photo"
+                      type="hidden"
+                      name="photo"
+                      value="20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg"
+                    />
+                    <button type="submit">カートに追加</button>
+                  </form>
                 </div>
+              </div>
             </div>
-
+          </div>
         </div>
-    </div>
-</div>
-</div>
-
-
-
-
-        </main>
-    </div>
-    <div id='footer'>
-        <div id='logo_footer'>
-            <img class="logo_footer" src="storage/materials/20250515_165603_pgcロゴ白.png" style:"300px" />
-        </div>
-        <div class='menu_footer_base'>
-            <div class='menu_footer'>
-                <a href='gallery.html'>gallery</a>
-            </div>
-            <!-- <div class='menu_footer'>
-                <a href='/all/exhibition'>exhibition</a>
-            </div> -->
-            <div class='menu_footer'>
-                <a href='./new_post'>store</a>
-            </div>
-            <div class='menu_footer'>
-                <a href='./new_post'>cart</a>
-            </div>
-        </div>
-        <div class='menu_footer_base'>
-            <a class='logo_sns_base' href="https://www.instagram.com/tomo_0404tom?igsh=MTFrNjlwMHpuNHlqZw%3D%3D&utm_source=qr">
-                <img class="logo_sns" src="storage/materials/20250516_170454_Instagram_Glyph_Black.png" style:"300px" />
-            </a>
-            <div class='logo_x_base'>
-                <img class="logo_sns" src="storage/materials/20250515_162753_logo-black.png" style:"300px" />
-            </div>
-        </div>
-
+      </main>
     </div>
 
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
+    <div id="footer">
+      <div id="logo_footer">
+        <img
+          class="logo_footer"
+          src="/PfSite_20250916/storage/materials/20250515_165603_pgcロゴ白.png"
+          alt="PGCロゴ（白）"
+        />
+      </div>
+
+      <div class="menu_footer_base">
+        <div class="menu_footer">
+          <a href="gallery.html">gallery</a>
+        </div>
+        <!-- <div class="menu_footer">
+        <a href="/all/exhibition">exhibition</a>
+      </div> -->
+        <div class="menu_footer">
+          <a href="./new_post">store</a>
+        </div>
+        <div class="menu_footer">
+          <a href="./new_post">cart</a>
+        </div>
+      </div>
+
+      <div class="menu_footer_base">
+        <a
+          class="logo_sns_base"
+          href="https://www.instagram.com/tomo_0404tom?igsh=MTFrNjlwMHpuNHlqZw%3D%3D&utm_source=qr"
+        >
+          <img
+            class="logo_sns"
+            src="/PfSite_20250916/storage/materials/20250516_170454_Instagram_Glyph_Black.png"
+            alt="Instagram ロゴ"
+          />
+        </a>
+        <div class="logo_x_base">
+          <img
+            class="logo_sns"
+            src="/PfSite_20250916/storage/materials/20250515_162753_logo-black.png"
+            alt="X ロゴ"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- libs -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
+    <link
+      rel="stylesheet"
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
     <script src="js/main.js"></script>
-</body>
+  </body>
+</html>
