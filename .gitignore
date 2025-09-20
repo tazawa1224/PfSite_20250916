@@ -1,0 +1,10 @@
+# Macの不要ファイル
+.DS_Store
+
+# Jekyll無効ファイルは許可
+!.nojekyll
+
+# storage を許可（※どこかで storage を無視していてもここで通す）
+!storage/
+!storage/materials/**
+!storage/images/**
