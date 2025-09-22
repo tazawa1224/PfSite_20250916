@@ -1,0 +1,4 @@
+# _config.yml
+url: "https://tazawa1224.github.io"   # あなたのGitHub Pagesドメイン
+baseurl: "/PfSite_20250916"           # プロジェクト名（先頭に / を付ける）
+title: "Laravel"                       # <title> 用。必要に応じて変更
