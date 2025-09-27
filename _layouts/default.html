@@ -1,0 +1,69 @@
+<!-- _layouts/default.html -->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JVQS05TLKQ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-JVQS05TLKQ");
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- CSRF Token -->
+    <meta
+      name="csrf-token"
+      content="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
+    />
+
+    <title>Laravel</title>
+
+    <!-- Scripts -->
+    <script src="js/app.js" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="http://fonts.gstatic.com/" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link href="css/app.css" rel="stylesheet" />
+    <link
+      rel="icon"
+      href="/PfSite_20250916/assets/favicon.png"
+      type="image/png"
+    />
+  </head>
+
+  <body>
+    {%- case page.header -%} {%- when "home" -%} {% include homeHeader.html %}
+    {%- when "store" -%} {% include storeHeader.html %} {%- else -%} {% include
+    contentsHeader.html %} {%- endcase -%} {{ content }} {% include
+    footer.html%}
+
+    <!-- JS（必要なものを） -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

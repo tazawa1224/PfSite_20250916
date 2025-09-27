@@ -1,49 +1,82 @@
-<body>
-  <div class="back">
-    <main class="py-4">
-      <div class="category">
-        <div class="category_name">store</div>
-        <div class="search">
-          <div class="search_title">search</div>
-          <form class="search_form" action="./search/user" method="POST">
-            <input
-              type="hidden"
-              name="_token"
-              value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
-            />
-            <input name="keyword" type="text" />
-          </form>
-        </div>
+---
+layout: default
+title: "store"
+header: store
+---
+
+<div id="store-back">
+  <!-- ======================== ヒーロー ======================== -->
+  <!-- ヒーローイメージ -->
+  <div id="store-hero-image-base">
+    <div class="hero-ratio-box">
+      <!-- ← 16:8の“外枠” -->
+      <div id="store-hero-base">
+        <!-- ← 等間隔でオフセットされた内側（16:8） -->
+        <img
+          id="store-hero-image"
+          src="/PfSite_20250916/storage/materials/20250521_045426_pgcフレームメイン画像.jpg"
+        />
       </div>
+    </div>
 
-      <div class="all_back">
-        <div class="all_back">
-          <!-- ------------以下商品------------ -->
-          <div class="exhibition_type">products</div>
-          <div>Photo Flame</div>
+    <div id="store-hero-logo-base">
+      <img
+        id="store-hero-logo"
+        src="/PfSite_20250916/storage/materials/20250515_165557_logo_black.png"
+        alt="PGCロゴ"
+      />
+    </div>
+  </div>
 
-          <div class="all_main_product_base">
-            <div class="main_product_base">
-              <div class="main_sub_base">
-                <img
-                  class="sub_image"
-                  src="/PfSite_20250916/storage/materials/20250521_045426_pgcフレームメイン画像.jpg"
-                />
-              </div>
-              <div class="sub_sub_base">
-                <img
-                  class="sub_sub_image"
-                  src="/PfSite_20250916/storage/materials/20250520_091422_R0001648.jpg"
-                />
-                <img
-                  class="sub_sub_image"
-                  src="/PfSite_20250916/storage/materials/20250520_091417_R0001651.jpg"
-                />
-              </div>
-            </div>
+  <div id="product">
+    <!-- ======================== 商品 ======================== -->
+    <!-- ------------フォトフレーム------------ -->
+    <h1>Photo flame</h1>
+    <div class="store-fotoflame">
+      <div class="product-grid">
+        <!-- 左：大きい写真 -->
+        <div class="main_sub_base frame">
+          <img
+            class="sub_image"
+            src="/PfSite_20250916/storage/materials/20250521_045426_pgcフレームメイン画像.jpg"
+          />
+        </div>
 
+        <!-- 中央：縦に2枚 -->
+        <div class="sub_sub_base">
+          <div class="frame">
+            <img
+              class="sub_sub_image"
+              src="/PfSite_20250916/storage/materials/20250520_091422_R0001648.jpg"
+            />
+          </div>
+          <div class="frame">
+            <img
+              class="sub_sub_image"
+              src="/PfSite_20250916/storage/materials/20250520_091417_R0001651.jpg"
+            />
+          </div>
+        </div>
+
+        <!-- 右：説明＋購入（上下）  -->
+        <div class="info_col">
+          <div class="info-card">
+            <h3 class="product-title">木の温度と、光の澄み。</h3>
+            <p>
+              無垢の木と透明アクリルを重ねた、ミニマルデザインの卓上フレーム。光を取り込み、写真やポストカードの質感と陰影を際立たせます。ご自宅のディスプレイはもちろん、店舗演出や撮影小物にも。
+            </p>
+
+            <p>
+              素材：無垢材（オイルフィニッシュ）、透明アクリル（エッジ磨き）<br />
+              対応サイズ（目安）：L判〜2L判相当（マット紙の併用で調整可）<br />
+              外寸：W × D × H（※参考値／個体差あり）<br />
+              生産国：日本
+            </p>
+          </div>
+
+          <div class="info-card">
+            <!-- 既存のカートをここに移動 -->
             <div class="store_cart">
-              <div>フォトフレーム</div>
               <form action="./cart/add" method="POST">
                 <input
                   type="hidden"
@@ -56,7 +89,7 @@
                   type="hidden"
                   name="name"
                   value="フォトフレーム"
-                /><!--商品名 -->
+                />
                 <input type="hidden" name="price" value="5000" />
                 <input type="number" name="quantity" value="1" min="1" />
                 <input
@@ -70,126 +103,139 @@
             </div>
           </div>
         </div>
-
-        <div>Photo Base</div>
-
-        <div class="all_main_product_base">
-          <div class="main_sub_base">
-            <div class="sub_images">
-              <img
-                class="sub_image_base"
-                src="/PfSite_20250916/storage/materials/20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg"
-              />
-              <div>
-                <div>L版マット紙</div>
-                <form action="./cart/add" method="POST">
-                  <input
-                    type="hidden"
-                    name="_token"
-                    value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
-                  />
-                  <input id="cart_id" type="hidden" name="id" value="item_2" />
-                  <input
-                    id="cart_name"
-                    type="hidden"
-                    name="name"
-                    value="L版マット紙"
-                  /><!--商品名 -->
-                  <input type="hidden" name="price" value="500" />
-                  <input type="number" name="quantity" value="1" min="1" />
-                  <input
-                    id="cart_photo"
-                    type="hidden"
-                    name="photo"
-                    value="20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg"
-                  />
-                  <button type="submit">カートに追加</button>
-                </form>
-              </div>
-            </div>
-
-            <div class="sub_images">
-              <img
-                class="sub_image_base"
-                src="/PfSite_20250916/storage/materials/20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg"
-              />
-              <div>
-                <div>2L版マット紙</div>
-                <form action="./cart/add" method="POST">
-                  <input
-                    type="hidden"
-                    name="_token"
-                    value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
-                  />
-                  <input id="cart_id" type="hidden" name="id" value="item_3" />
-                  <input
-                    id="cart_name"
-                    type="hidden"
-                    name="name"
-                    value="2L版マット紙"
-                  /><!--商品名 -->
-                  <input type="hidden" name="price" value="500" />
-                  <input type="number" name="quantity" value="1" min="1" />
-                  <input
-                    id="cart_photo"
-                    type="hidden"
-                    name="photo"
-                    value="20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg"
-                  />
-                  <button type="submit">カートに追加</button>
-                </form>
-              </div>
-            </div>
-
-            <div class="sub_images">
-              <img
-                class="sub_image_base"
-                src="/PfSite_20250916/storage/materials/20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg"
-              />
-              <div>
-                <div>チェキ用マット紙</div>
-                <form action="./cart/add" method="POST">
-                  <input
-                    type="hidden"
-                    name="_token"
-                    value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
-                  />
-                  <input id="cart_id" type="hidden" name="id" value="item_4" />
-                  <input
-                    id="cart_name"
-                    type="hidden"
-                    name="name"
-                    value="チェキ用マット紙"
-                  /><!--商品名 -->
-                  <input type="hidden" name="price" value="500" />
-                  <input type="number" name="quantity" value="1" min="1" />
-                  <input
-                    id="cart_photo"
-                    type="hidden"
-                    name="photo"
-                    value="20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg"
-                  />
-                  <button type="submit">カートに追加</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-    </main>
-  </div>
+    </div>
 
-  <!-- libs -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <link
-    rel="stylesheet"
-    href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css"
-  />
-  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"
-  ></script>
-  <script src="js/main.js"></script>
-</body>
+    <!-- 以下リフィル -->
+    <div class="product-title">
+      <h1 >Refill</h1>
+      <!-- <p>
+        木の温度と、光の澄み。
+        無垢の木と透明アクリルを重ねた、ミニマルデザインの卓上フレーム。光を取り込み、写真やポストカードの質感と陰影を際立たせます。ご自宅のディスプレイはもちろん、店舗演出や撮影小物にも。
+      </p> -->
+    </div>
+
+    <div class="store-fotoflame">
+      <div class="store-catalog-grid">
+        <!-- 1枚目 -->
+        <article class="catalog-card">
+          <div class="catalog-card__image">
+            <img
+              src="/PfSite_20250916/storage/materials/20250521_045426_pgcフレームメイン画像.jpg"
+              alt=""
+            />
+          </div>
+          <div class="catalog-card__body">
+            <h3 class="catalog-card__title">フォトフレーム</h3>
+            <p>
+              必要な時に必要な分だけ1枚1枚自由に切り離して、レザー/バインダーに綴る…
+            </p>
+
+            <form class="catalog-card__form" action="./cart/add" method="POST">
+              <input
+                type="hidden"
+                name="_token"
+                value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
+              />
+              <input id="cart_id" type="hidden" name="id" value="item_1" />
+              <input
+                id="cart_name"
+                type="hidden"
+                name="name"
+                value="フォトフレーム"
+              />
+              <input type="hidden" name="price" value="5000" />
+              <input
+                id="cart_photo"
+                type="hidden"
+                name="photo"
+                value="20250521_045426_pgcフレームメイン画像.jpg"
+              />
+
+              <input type="number" name="quantity" value="1" min="1" />
+              <button type="submit">カートに追加</button>
+            </form>
+          </div>
+        </article>
+
+        <!-- 2枚目 -->
+        <article class="catalog-card">
+          <div class="catalog-card__image">
+            <img
+              src="/PfSite_20250916/storage/materials/20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg"
+              alt=""
+            />
+          </div>
+          <div class="catalog-card__body">
+            <h3 class="catalog-card__title">2L版マット紙</h3>
+            <p>必要な時に必要な分だけ…</p>
+
+            <form class="catalog-card__form" action="./cart/add" method="POST">
+              <input
+                type="hidden"
+                name="_token"
+                value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
+              />
+              <input id="cart_id" type="hidden" name="id" value="item_3" />
+              <input
+                id="cart_name"
+                type="hidden"
+                name="name"
+                value="2L版マット紙"
+              />
+              <input type="hidden" name="price" value="500" />
+              <input
+                id="cart_photo"
+                type="hidden"
+                name="photo"
+                value="20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg"
+              />
+
+              <input type="number" name="quantity" value="1" min="1" />
+              <button type="submit">カートに追加</button>
+            </form>
+          </div>
+        </article>
+
+        <!-- 3枚目 -->
+        <article class="catalog-card">
+          <div class="catalog-card__image">
+            <img
+              src="/PfSite_20250916/storage/materials/20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg"
+              alt=""
+            />
+          </div>
+          <div class="catalog-card__body">
+            <h3 class="catalog-card__title">チェキ用マット紙</h3>
+            <p>必要な時に必要な分だけ…</p>
+
+            <form class="catalog-card__form" action="./cart/add" method="POST">
+              <input
+                type="hidden"
+                name="_token"
+                value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
+              />
+              <input id="cart_id" type="hidden" name="id" value="item_4" />
+              <input
+                id="cart_name"
+                type="hidden"
+                name="name"
+                value="チェキ用マット紙"
+              />
+              <input type="hidden" name="price" value="500" />
+              <input
+                id="cart_photo"
+                type="hidden"
+                name="photo"
+                value="20250520_094540_JPEGイメージ-A6ADA4A1AE97-1.jpg"
+              />
+
+              <input type="number" name="quantity" value="1" min="1" />
+              <button type="submit">カートに追加</button>
+            </form>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>

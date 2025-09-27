@@ -1,0 +1,22 @@
+current directory: /Users/tazawatomoro/Documents/GitHub/PfSite_20250916/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+/opt/homebrew/opt/ruby/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/tazawatomoro/Documents/GitHub/PfSite_20250916/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250922-86241-gfdktm sitelibdir\=./.gem.20250922-86241-gfdktm clean
+
+current directory: /Users/tazawatomoro/Documents/GitHub/PfSite_20250916/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250922-86241-gfdktm sitelibdir\=./.gem.20250922-86241-gfdktm
+compiling cparse.c
+In file included from cparse.c:12:
+In file included from /opt/homebrew/Cellar/ruby/3.4.6/include/ruby-3.4.0/ruby.h:38:
+In file included from /opt/homebrew/Cellar/ruby/3.4.6/include/ruby-3.4.0/ruby/ruby.h:42:
+In file included from /opt/homebrew/Cellar/ruby/3.4.6/include/ruby-3.4.0/ruby/internal/memory.h:64:
+/opt/homebrew/Cellar/ruby/3.4.6/include/ruby-3.4.0/ruby/internal/stdckdint.h:48:11: error: 'stdckdint.h' file not found with <angled> include; use "quotes" instead
+   48 | # include <stdckdint.h>
+      |           ^~~~~~~~~~~~~
+      |           "stdckdint.h"
+1 error generated.
+make: *** [cparse.o] Error 1
+
+make failed, exit code 2

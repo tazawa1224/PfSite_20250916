@@ -1,0 +1,19 @@
+current directory: /Users/tazawatomoro/Documents/GitHub/PfSite_20250916/vendor/bundle/ruby/3.3.0/gems/eventmachine-1.2.7/ext/fastfilereader
+/Users/tazawatomoro/.rbenv/versions/3.3.5/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/tazawatomoro/Documents/GitHub/PfSite_20250916/vendor/bundle/ruby/3.3.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20250922-22558-jeomvc sitelibdir\=./.gem.20250922-22558-jeomvc clean
+
+current directory: /Users/tazawatomoro/Documents/GitHub/PfSite_20250916/vendor/bundle/ruby/3.3.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20250922-22558-jeomvc sitelibdir\=./.gem.20250922-22558-jeomvc
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.bundle
+
+current directory: /Users/tazawatomoro/Documents/GitHub/PfSite_20250916/vendor/bundle/ruby/3.3.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20250922-22558-jeomvc sitelibdir\=./.gem.20250922-22558-jeomvc install
+/usr/bin/install -c -m 0755 fastfilereaderext.bundle ./.gem.20250922-22558-jeomvc
+
+current directory: /Users/tazawatomoro/Documents/GitHub/PfSite_20250916/vendor/bundle/ruby/3.3.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20250922-22558-jeomvc sitelibdir\=./.gem.20250922-22558-jeomvc clean

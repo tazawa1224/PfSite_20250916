@@ -3,419 +3,262 @@ layout: default
 title: "gallery"
 ---
 
-<!-- <div id="header">
-  <a id="logo" href="/PfSite_20250916/index.html">
-    <div class="header_logo_base">
+<div class="back">
+  <main class="py-4">
+    <header class="category">
+      <h1 class="category_name">gallery</h1>
+
+      <div class="search" role="search">
+        <a class="new_post" href="./photo/create">新規投稿</a>
+        <form
+          class="search_form"
+          action="./search/user"
+          method="POST"
+          aria-label="ユーザー検索"
+        >
+          <input
+            type="hidden"
+            name="_token"
+            value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
+          />
+          <label for="gallery-keyword" class="search_title">search</label>
+          <input id="gallery-keyword" name="keyword" type="text" />
+        </form>
+      </div>
+    </header>
+
+    <figure class="main_image_base">
       <img
-        class="header_logo"
-        src="/PfSite_20250916/storage/materials/20250515_165557_logo_black.png"
-        alt="PGCロゴ"
+        class="main_image"
+        src="/PfSite_20250916/storage/materials/20250516_092304_%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202025-05-16%2018.15.54.png"
+        alt="ギャラリーのメインビジュアル"
       />
-    </div>
-  </a>
+    </figure>
 
-  <div class="header_display_flex">
-    <div id="header_menu_base">
-      <a href="gallery.html" class="menu">gallery</a>
-      <a href="store.html" class="menu">store</a>
-      <a class="menu" href="login.html">login</a>
-      <a class="menu" href="register.html">新規登録</a>
-      <a class="cart_logo" href="cart.html">🛒</a>
-    </div>
+    <main class="all_back">
+      <section class="all_back" aria-label="ギャラリー一覧">
+        <div class="gallery_title_base"></div>
 
-    <a
-      class="user_icon_base"
-      href="mypage.html"
-      role="button"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-      v-pre
-    ></a>
-  </div>
-
-  <div id="header_space"></div>
-</div> -->
-
-<main class="py-4">
-  <header class="category">
-    <h1 class="category_name">gall</h1>
-
-    <div class="search" role="search">
-      <a class="new_post" href="./photo/create">新規投稿</a>
-      <form
-        class="search_form"
-        action="./search/user"
-        method="POST"
-        aria-label="ユーザー検索"
-      >
-        <input
-          type="hidden"
-          name="_token"
-          value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
-        />
-        <label for="gallery-keyword" class="search_title">search</label>
-        <input id="gallery-keyword" name="keyword" type="text" />
-      </form>
-    </div>
-  </header>
-
-  <figure class="main_image_base">
-    <img
-      class="main_image"
-      src="/PfSite_20250916/storage/materials/20250516_092304_%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202025-05-16%2018.15.54.png"
-      alt="ギャラリーのメインビジュアル"
-    />
-  </figure>
-
-  <main class="all_back">
-    <section class="all_back" aria-label="ギャラリー一覧">
-      <div class="gallery_title_base"></div>
-
-      <!-- グリッド -->
-      <section class="back_base" role="list">
-        <article class="block_base" role="listitem">
-          <figure class="photo_frame_base">
-            <img
-              class="photo_frame"
-              src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
-              alt=""
-              aria-hidden="true"
-            />
-            <div class="photo_base">
+        <!-- グリッド -->
+        <section class="back_base" role="list">
+          <article class="block_base" role="listitem">
+            <figure class="photo_frame_base">
               <img
-                class="photo"
-                id="40"
-                src="/PfSite_20250916/storage/images/20250914_121357__i_icon_00055_icon_000550_256.png"
-                alt="投稿写真 40"
+                class="photo_frame"
+                src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
+                alt=""
+                aria-hidden="true"
               />
-            </div>
-          </figure>
-        </article>
-
-        <article class="block_base" role="listitem">
-          <figure class="photo_frame_base">
-            <img
-              class="photo_frame"
-              src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
-              alt=""
-              aria-hidden="true"
-            />
-            <div class="photo_base">
-              <img
-                class="photo"
-                id="39"
-                src="/PfSite_20250916/storage/images/20250914_121311_%E5%86%99%E7%9C%9F%E8%BF%BD%E5%8A%A0%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png"
-                alt="投稿写真 39"
-              />
-            </div>
-          </figure>
-        </article>
-
-        <article class="block_base" role="listitem">
-          <figure class="photo_frame_base">
-            <img
-              class="photo_frame"
-              src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
-              alt=""
-              aria-hidden="true"
-            />
-            <div class="photo_base">
-              <img
-                class="photo"
-                id="38"
-                src="/PfSite_20250916/storage/images/20250913_072528__i_icon_00055_icon_000550_256.png"
-                alt="投稿写真 38"
-              />
-            </div>
-          </figure>
-        </article>
-
-        <article class="block_base" role="listitem">
-          <figure class="photo_frame_base">
-            <img
-              class="photo_frame"
-              src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
-              alt=""
-              aria-hidden="true"
-            />
-            <div class="photo_base">
-              <img
-                class="photo"
-                id="34"
-                src="/PfSite_20250916/storage/images/20250520_113606_R0010768.jpg"
-                alt="投稿写真 34"
-              />
-            </div>
-          </figure>
-        </article>
-
-        <article class="block_base" role="listitem">
-          <figure class="photo_frame_base">
-            <img
-              class="photo_frame"
-              src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
-              alt=""
-              aria-hidden="true"
-            />
-            <div class="photo_base">
-              <img
-                class="photo"
-                id="30"
-                src="/PfSite_20250916/storage/images/20250519_210008_R0008221.jpg"
-                alt="投稿写真 30"
-              />
-            </div>
-          </figure>
-        </article>
-
-        <article class="block_base" role="listitem">
-          <figure class="photo_frame_base">
-            <img
-              class="photo_frame"
-              src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
-              alt=""
-              aria-hidden="true"
-            />
-            <div class="photo_base">
-              <img
-                class="photo"
-                id="29"
-                src="/PfSite_20250916/storage/images/20250519_205757_IMG_3894.jpg"
-                alt="投稿写真 29"
-              />
-            </div>
-          </figure>
-        </article>
-
-        <article class="block_base" role="listitem">
-          <figure class="photo_frame_base">
-            <img
-              class="photo_frame"
-              src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
-              alt=""
-              aria-hidden="true"
-            />
-            <div class="photo_base">
-              <img
-                class="photo"
-                id="28"
-                src="/PfSite_20250916/storage/images/20250518_191834_IMG_4339.jpg"
-                alt="投稿写真 28"
-              />
-            </div>
-          </figure>
-        </article>
-
-        <article class="block_base" role="listitem">
-          <figure class="photo_frame_base">
-            <img
-              class="photo_frame"
-              src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
-              alt=""
-              aria-hidden="true"
-            />
-            <div class="photo_base">
-              <img
-                class="photo"
-                id="27"
-                src="/PfSite_20250916/storage/images/20250518_191408_IMG_0744.jpg"
-                alt="投稿写真 27"
-              />
-            </div>
-          </figure>
-        </article>
-
-        <article class="block_base" role="listitem">
-          <figure class="photo_frame_base">
-            <img
-              class="photo_frame"
-              src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
-              alt=""
-              aria-hidden="true"
-            />
-            <div class="photo_base">
-              <img
-                class="photo"
-                id="26"
-                src="/PfSite_20250916/storage/images/20250518_143313_R0000513.jpg"
-                alt="投稿写真 26"
-              />
-            </div>
-          </figure>
-        </article>
-
-        <article class="block_base" role="listitem">
-          <figure class="photo_frame_base">
-            <img
-              class="photo_frame"
-              src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
-              alt=""
-              aria-hidden="true"
-            />
-            <div class="photo_base">
-              <img
-                class="photo"
-                id="20"
-                src="/PfSite_20250916/storage/images/20250517_161513_20231103205350938.jpg"
-                alt="投稿写真 20"
-              />
-            </div>
-          </figure>
-        </article>
-
-        <article class="block_base" role="listitem">
-          <figure class="photo_frame_base">
-            <img
-              class="photo_frame"
-              src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
-              alt=""
-              aria-hidden="true"
-            />
-            <div class="photo_base">
-              <img
-                class="photo"
-                id="19"
-                src="/PfSite_20250916/storage/images/20250516_103800_R0011223%202.jpg"
-                alt="投稿写真 19"
-              />
-            </div>
-          </figure>
-        </article>
-
-        <article class="block_base" role="listitem">
-          <figure class="photo_frame_base">
-            <img
-              class="photo_frame"
-              src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
-              alt=""
-              aria-hidden="true"
-            />
-            <div class="photo_base">
-              <img
-                class="photo"
-                id="18"
-                src="/PfSite_20250916/storage/images/20250516_103604_R0010768.jpg"
-                alt="投稿写真 18"
-              />
-            </div>
-          </figure>
-        </article>
-
-        <article class="block_base" role="listitem">
-          <figure class="photo_frame_base">
-            <img
-              class="photo_frame"
-              src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
-              alt=""
-              aria-hidden="true"
-            />
-            <div class="photo_base">
-              <img
-                class="photo"
-                id="17"
-                src="/PfSite_20250916/storage/images/20250516_103436_20231108213111686.jpg"
-                alt="投稿写真 17"
-              />
-            </div>
-          </figure>
-        </article>
-
-        <article class="block_base" role="listitem">
-          <figure class="photo_frame_base">
-            <img
-              class="photo_frame"
-              src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
-              alt=""
-              aria-hidden="true"
-            />
-            <div class="photo_base">
-              <img
-                class="photo"
-                id="16"
-                src="/PfSite_20250916/storage/images/20250516_102343_IMG_4343.jpg"
-                alt="投稿写真 16"
-              />
-            </div>
-          </figure>
-        </article>
-      </section>
-
-      <!-- モーダル -->
-      <div
-        class="myModal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="galleryTitle"
-      >
-        <div class="modal">
-          <div class="modalContent">
-            <div class="caption-base">
-              <div class="caption-info">
-                <div id="galleryTitle"></div>
-                <div id="galleryComment"></div>
-                <div class="caption-cart">
-                  <form
-                    action="./cart/add"
-                    method="POST"
-                    aria-label="カートに追加"
-                    onsubmit="alert('カートに追加しました。');"
-                  >
-                    <input
-                      type="hidden"
-                      name="_token"
-                      value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
-                    />
-                    <input id="cart_id" type="hidden" name="id" value="#" />
-                    <input id="cart_name" type="hidden" name="name" value="#" />
-                    <input type="hidden" name="price" value="500" />
-                    <input
-                      id="cart-quantity"
-                      type="number"
-                      name="quantity"
-                      value="1"
-                      min="1"
-                      aria-label="数量"
-                    />
-                    <input
-                      id="cart_photo"
-                      type="hidden"
-                      name="photo"
-                      value="#"
-                    />
-                    <button class="add-cart" type="submit">カートに追加</button>
-                  </form>
-                </div>
+              <div class="photo_base">
+                <img
+                  class="photo"
+                  id="34"
+                  src="/PfSite_20250916/storage/images/20250520_113606_R0010768.jpg"
+                  alt="投稿写真 34"
+                />
               </div>
+            </figure>
+          </article>
 
-              <div class="caption-user">
-                <a id="userIcon" class="user_icon_base" href="gallery.html#">
-                  <img
-                    class="modal_user_icon"
-                    id="js_user_icon"
-                    alt="投稿者アイコン"
-                  />
-                </a>
-                <a id="userPage" class="galleryUserName" href="gallery.html#"
-                  >ユーザーページ</a
-                >
-                <a
-                  id="postDelete"
-                  class="none_input"
-                  href="gallery.html#"
-                  onclick='return confirm("本当に削除しますか？")'
-                  >削除</a
-                >
-                <div
-                  class="download-disabled"
-                  aria-disabled="true"
-                  title="静的サイトでは無効です"
-                >
-                  ダウンロードは静的サイトでは無効です
-                </div>
+          <article class="block_base" role="listitem">
+            <figure class="photo_frame_base">
+              <img
+                class="photo_frame"
+                src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <div class="photo_base">
+                <img
+                  class="photo"
+                  id="30"
+                  src="/PfSite_20250916/storage/images/20250519_210008_R0008221.jpg"
+                  alt="投稿写真 30"
+                />
               </div>
-            </div>
+            </figure>
+          </article>
 
+          <article class="block_base" role="listitem">
+            <figure class="photo_frame_base">
+              <img
+                class="photo_frame"
+                src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <div class="photo_base">
+                <img
+                  class="photo"
+                  id="29"
+                  src="/PfSite_20250916/storage/images/20250519_205757_IMG_3894.jpg"
+                  alt="投稿写真 29"
+                />
+              </div>
+            </figure>
+          </article>
+
+          <article class="block_base" role="listitem">
+            <figure class="photo_frame_base">
+              <img
+                class="photo_frame"
+                src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <div class="photo_base">
+                <img
+                  class="photo"
+                  id="28"
+                  src="/PfSite_20250916/storage/images/20250518_191834_IMG_4339.jpg"
+                  alt="投稿写真 28"
+                />
+              </div>
+            </figure>
+          </article>
+
+          <article class="block_base" role="listitem">
+            <figure class="photo_frame_base">
+              <img
+                class="photo_frame"
+                src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <div class="photo_base">
+                <img
+                  class="photo"
+                  id="27"
+                  src="/PfSite_20250916/storage/images/20250518_191408_IMG_0744.jpg"
+                  alt="投稿写真 27"
+                />
+              </div>
+            </figure>
+          </article>
+
+          <article class="block_base" role="listitem">
+            <figure class="photo_frame_base">
+              <img
+                class="photo_frame"
+                src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <div class="photo_base">
+                <img
+                  class="photo"
+                  id="26"
+                  src="/PfSite_20250916/storage/images/20250518_143313_R0000513.jpg"
+                  alt="投稿写真 26"
+                />
+              </div>
+            </figure>
+          </article>
+
+          <article class="block_base" role="listitem">
+            <figure class="photo_frame_base">
+              <img
+                class="photo_frame"
+                src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <div class="photo_base">
+                <img
+                  class="photo"
+                  id="20"
+                  src="/PfSite_20250916/storage/images/20250517_161513_20231103205350938.jpg"
+                  alt="投稿写真 20"
+                />
+              </div>
+            </figure>
+          </article>
+
+          <article class="block_base" role="listitem">
+            <figure class="photo_frame_base">
+              <img
+                class="photo_frame"
+                src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <div class="photo_base">
+                <img
+                  class="photo"
+                  id="19"
+                  src="/PfSite_20250916/storage/images/20250516_103800_R0011223%202.jpg"
+                  alt="投稿写真 19"
+                />
+              </div>
+            </figure>
+          </article>
+
+          <article class="block_base" role="listitem">
+            <figure class="photo_frame_base">
+              <img
+                class="photo_frame"
+                src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <div class="photo_base">
+                <img
+                  class="photo"
+                  id="18"
+                  src="/PfSite_20250916/storage/images/20250516_103604_R0010768.jpg"
+                  alt="投稿写真 18"
+                />
+              </div>
+            </figure>
+          </article>
+
+          <article class="block_base" role="listitem">
+            <figure class="photo_frame_base">
+              <img
+                class="photo_frame"
+                src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <div class="photo_base">
+                <img
+                  class="photo"
+                  id="17"
+                  src="/PfSite_20250916/storage/images/20250516_103436_20231108213111686.jpg"
+                  alt="投稿写真 17"
+                />
+              </div>
+            </figure>
+          </article>
+
+          <article class="block_base" role="listitem">
+            <figure class="photo_frame_base">
+              <img
+                class="photo_frame"
+                src="/PfSite_20250916/storage/materials/20250509_074032_%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%86%E3%82%B9%E3%83%88.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <div class="photo_base">
+                <img
+                  class="photo"
+                  id="16"
+                  src="/PfSite_20250916/storage/images/20250516_102343_IMG_4343.jpg"
+                  alt="投稿写真 16"
+                />
+              </div>
+            </figure>
+          </article>
+        </section>
+
+        <!-- モーダル -->
+        <div
+          class="myModal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="galleryTitle"
+        >
+          <div class="modal">
             <div class="modal_main_photo">
               <figure class="modalPhoto_frame_base">
                 <img
@@ -433,10 +276,73 @@ title: "gallery"
                 </div>
               </figure>
             </div>
+
+            <div class="caption-base">
+              <div class="caption-padding">
+                <div class="caption-top">
+                  <div id="galleryTitle">タイトル</div>
+                  <div id="galleryComment">コメント</div>
+                </div>
+
+                <div class="caption-bottom">
+                  <div class="caption-cart">
+                    <form
+                      action="./cart/add"
+                      method="POST"
+                      aria-label="カートに追加"
+                      onsubmit="alert('カートに追加しました。');"
+                    >
+                      <input
+                        type="hidden"
+                        name="_token"
+                        value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
+                      />
+                      <input id="cart_id" type="hidden" name="id" value="#" />
+                      <input
+                        id="cart_name"
+                        type="hidden"
+                        name="name"
+                        value="#"
+                      />
+                      <input type="hidden" name="price" value="500" />
+                      <input
+                        id="cart-quantity"
+                        type="number"
+                        name="quantity"
+                        value="1"
+                        min="1"
+                        aria-label="数量"
+                      />
+                      <input
+                        id="cart_photo"
+                        type="hidden"
+                        name="photo"
+                        value="#"
+                      />
+                      <button class="add-cart" type="submit">
+                        カートに追加
+                      </button>
+                    </form>
+                  </div>
+
+                  <div class="caption-user">
+                    <a class="user_icon_base">
+                      <img
+                        class="modal_user_icon"
+                        id="js_user_icon"
+                        src="/PfSite_20250916/storage/images/20250516_102343_IMG_4343.jpg"
+                        alt="投稿者アイコン"
+                      />
+                    </a>
+                    <a id="userPage" class="galleryUserName">ユーザーページ</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- /モーダル -->
-    </section>
+        <!-- /モーダル -->
+      </section>
+    </main>
   </main>
-</main>
+</div>

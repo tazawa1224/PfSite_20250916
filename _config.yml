@@ -1,4 +1,28 @@
-# _config.yml
-url: "https://tazawa1224.github.io"   # あなたのGitHub Pagesドメイン
-baseurl: "/PfSite_20250916"           # プロジェクト名（先頭に / を付ける）
-title: "Laravel"                       # <title> 用。必要に応じて変更
+# サイトの基本情報
+title: "Photographers Club"
+url: "https://tazawa1224.github.io"   # あなたのGitHub Pagesのユーザー/組織URL
+baseurl: "/PfSite_20250916"           # リポジトリ名（先頭スラッシュ付きで）
+
+timezone: "Asia/Tokyo"
+
+# マークダウン＆プラグイン（Gemfileの内容に合わせる）
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# ビルドから除外しておくと安心なもの
+exclude:
+  - vendor/
+  - node_modules/
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# 既に front matter（---）があるページに既定レイアウトを当てたい場合だけ有効
+# ※ front matterが無い .html はそのまま静的ファイルとして配信されます
+defaults:
+  - scope:
+      path: ""         # ルート配下すべて
+      type: "pages"
+    values:
+      layout: "default"
