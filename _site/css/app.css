@@ -1,14 +1,16 @@
 /* ===================== Reset / Base ===================== */
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
-
 button {
   background-color: transparent;
   border: none;
@@ -29,17 +31,14 @@ button {
   height: 15vw;
   padding-top: 2.5vw;
 }
-
 #logo_footer {
   margin-left: auto;
   margin-right: auto;
   width: 30vw;
 }
-
 .logo_footer {
   width: 30vw;
 }
-
 .menu_footer_base {
   margin-top: 1vw;
   margin-left: auto;
@@ -47,14 +46,12 @@ button {
   width: 30vw;
   display: flex;
 }
-
 .menu_footer {
   margin-left: auto;
   margin-right: auto;
   font-size: 1.5vw;
   color: #000;
 }
-
 .logo_sns_base {
   margin-top: 1.5vw;
   margin-left: auto;
@@ -96,7 +93,6 @@ button {
   margin-top: 1vw;
   width: 100%;
 }
-
 .header_home_flex {
   display: flex;
   align-items: flex-end;
@@ -109,7 +105,6 @@ button {
   margin-top: 1vw;
   width: 100%;
 }
-
 .header_logo_base {
   width: 18vw;
   position: fixed;
@@ -118,19 +113,16 @@ button {
   margin-left: 1.3vw;
   margin-top: 0.5vw;
 }
-
 .header_logo {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 #header_menu_base {
   width: fit-content;
   margin-left: auto;
   margin-right: 1vw;
 }
-
 .menu {
   font-size: 1vw;
   margin-left: 0.5vw;
@@ -138,22 +130,20 @@ button {
   font-family: "Charter";
   z-index: 2;
 }
-
 .cart_logo {
   width: 1vw;
   height: 1vw;
 }
 
-/*==============================storeヘッダー(ハンバーガー)===========================*/
-/* 固定ヘッダー（必要なければ position/box-shadow は外してOK） */
+/*============================== store ヘッダー（ハンバーガー） ===========================*/
 .store-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10000;
-  background: transparent; /* ← 透明に変更 */
-  box-shadow: none; /* ← 影なしに変更 */
+  background: transparent;
+  box-shadow: none;
   transform: translateY(0);
   transition: background 200ms ease, box-shadow 200ms ease, transform 200ms ease;
 }
@@ -162,8 +152,6 @@ button {
   --btn-size: 40px;
 }
 
-/* ハンバーガー外観 */
-/* ハンバーガーを右上に */
 .store-hamburger {
   position: absolute;
   top: var(--sh-pad);
@@ -186,17 +174,15 @@ button {
   margin-top: 4px;
 }
 
-/* ドロワーナビ（モバイル） */
-/* ナビの右上角＝ハンバーガーの右上角に合わせる */
 .store-nav[hidden] {
   display: none !important;
 }
 .store-nav {
   position: absolute;
   top: var(--sh-pad);
-  right: var(--sh-pad); /* ← ここがポイント（右上角一致） */
-  width: max-content; /* 必要幅だけ */
-  min-width: 180px; /* お好みで */
+  right: var(--sh-pad);
+  width: max-content;
+  min-width: 180px;
   display: grid;
   gap: 6px;
   padding: 10px 14px;
@@ -204,7 +190,7 @@ button {
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  transform-origin: top right; /* アニメ付けたいとき用 */
+  transform-origin: top right;
 }
 .store-nav .store-menu {
   display: block;
@@ -212,18 +198,13 @@ button {
   font-size: 15px;
 }
 
-/* 960px以上は横並び／ハンバーガー非表示 */
 @media (min-width: 960px) {
-  /* PCでもハンバーガーを使い続ける想定：表示のまま */
-  /* .store-hamburger{ display:none; } ←横並びに戻したい時だけ有効化 */
-
   .store-nav {
     position: absolute;
-    top: calc(var(--sh-pad) + var(--btn-size)); /* ボタンの真下から開始 */
-    right: var(--sh-pad); /* 右上角をボタンと一致 */
-    /* left/right を両方入れない！ */
+    top: calc(var(--sh-pad) + var(--btn-size));
+    right: var(--sh-pad);
     width: max-content;
-    min-width: 220px; /* お好みで */
+    min-width: 220px;
     display: grid !important;
     gap: 8px;
     padding: 12px 16px;
@@ -235,6 +216,19 @@ button {
   }
   .store-nav[hidden] {
     display: none !important;
+  }
+}
+
+/* PC表示でも縦積みにする */
+@media (min-width: 901px) {
+  .store_cart form {
+    grid-template-columns: 1fr; /* ← 1列に */
+    row-gap: 10px; /* 既存gapと同等の間隔 */
+  }
+  .store_cart input[type="number"],
+  .store_cart button {
+    width: 100%;
+    justify-self: stretch; /* 横幅いっぱいに */
   }
 }
 
@@ -263,7 +257,6 @@ button {
 }
 
 /* ===================== Gallery ===================== */
-/* 枚数に応じて可変：まず3列、広い画面で4列 */
 .back_base {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -271,21 +264,18 @@ button {
   width: 100%;
   padding-bottom: 3vw;
 }
-
 @media (min-width: 980px) {
   .back_base {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
-
 .block_base {
   width: 20vw;
-  aspect-ratio: 29.25 / 42.3; /* 額縁に合わせた比率 */
+  aspect-ratio: 29.25 / 42.3;
   position: relative;
   display: block;
   margin-bottom: 20px;
 }
-
 .photo_frame_base {
   position: absolute;
   inset: 0;
@@ -293,14 +283,11 @@ button {
   height: 100%;
   box-shadow: 2px 2px 4px rgb(128 128 128 / 60%);
 }
-
 .photo_frame {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
-/* 内側の写真エリア（既存レイアウトを踏襲） */
 .photo_base {
   background-color: rgb(168, 168, 168);
   height: 66%;
@@ -312,13 +299,11 @@ button {
   left: 0;
   margin: auto;
 }
-
 .photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 .main_image_base {
   height: 30vw;
   width: 100vw;
@@ -376,17 +361,14 @@ button {
   padding-bottom: 1vw;
   padding-top: 4vw;
 }
-.mypage_name {
-  width: calc(100% / 3);
-}
-.mypage_icon {
+.mypage_name,
+.mypage_icon,
+.mypage_menu {
   width: calc(100% / 3);
 }
 .mypage_menu {
-  width: calc(100% / 3);
   display: flex;
 }
-
 .mypage_menu_title {
   font-family: "Charter";
   border-left: 1px solid #000;
@@ -402,7 +384,6 @@ button {
   width: 50%;
   font-size: 1vw;
 }
-
 .mypage_name_body {
   text-align: center;
   font-family: "Charter";
@@ -410,116 +391,145 @@ button {
 }
 
 /* ========================================== Store ========================================== */
-/* ------------------- store 共有 ------------------- */
+/* 共有 */
 #store-back {
   background-color: rgb(196, 196, 196);
 }
-.product-title{
+.product-title {
   display: flex;
   margin-top: 50px;
 }
-/* ------------------- store ヒーローイメージ ------------------- */
+
+/* ヒーローイメージ */
 #store-hero-image-base {
   position: relative;
   width: 100vw;
-  height: 100vh; /* ここが“全画面” */
+  height: 100vh;
   display: block;
-  place-items: center; /* 中央に16:8の外枠を配置 */
+  place-items: center;
   background: #fff;
   margin-bottom: -10px;
 }
-/* 追従ボックス：親から均等オフセットで広がる */
 #store-hero-base {
-  --hero-gap: 50px; /* ← 四辺の余白だけ決める */
+  --hero-gap: 50px;
   position: absolute;
-  inset: var(--hero-gap); /* ← 親に完全追従（上下左右の隙間は均一） */
+  inset: var(--hero-gap);
   overflow: hidden;
   background: transparent;
-  /* aspect-ratio: 16 / 8; ← 消す（固定比率をやめる） */
 }
-
-/* 中の画像はボックスいっぱいに。見え方は cover / contain を選択 */
 #store-hero-image {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover; /* 全面表示でトリミング → contain にすると全体表示 */
+  object-fit: cover;
   object-position: center;
 }
-
 #store-hero-logo-base {
   position: absolute;
-  inset: 0; /* ヒーロー全面 */
+  inset: 0;
   display: grid;
-  place-items: center; /* ど真ん中 */
-  z-index: 11001; /* 画像より前、ヘッダー(10000)よりも上に出したいならこの値でOK */
-  pointer-events: none; /* ロゴでクリックをブロックしたくない場合 */
+  place-items: center;
+  z-index: 11001;
+  pointer-events: none;
 }
 #store-hero-logo {
   width: 100vw;
-  /* background-color: #fff; */
   padding-top: 300px;
 }
-/* ------------------- store フォトフレーム ------------------- */
 
-#product{
-  margin: 0 12vw;
-  padding-top:10vh;
+/* 商品 */
+#product {
+  margin: 0 10vw;
+  padding-top: 10vh;
 }
 
-/* コンテナ（薄グレーの大枠っぽい見た目） */
+/* コンテナ（白箱） */
 .store-fotoflame {
   background: #ffffff;
   padding: 16px;
+  width: 100%;
+  min-height: 68vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 8px;
 }
 
-/* 3カラムのグリッド */
+/* 3カラム */
 .product-grid {
   display: grid;
-  grid-template-columns: 2fr 1.1fr 1.2fr; /* 左/中/右 の比率は好みで */
   gap: 15px;
+  height: 100%;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr) minmax(0, 1fr);
+  align-items: stretch;
+}
+.product-grid > * {
+  min-width: 0;
+  overflow: hidden;
 }
 
-/* 右列は上下2段 */
+.main_sub_base,
+.sub_sub_base,
+.info_col {
+  height: 100%;
+  min-width: 0;
+}
+
+/* 右列（説明+購入） */
 .info_col {
   display: grid;
-  grid-template-rows: 1fr auto; /* 上=説明（伸縮）, 下=購入（高さなり） */
+  grid-template-rows: 1fr auto;
   gap: 16px;
+  min-height: 0;
 }
-
-/* “白いカード”風の箱（画像額縁・テキストカード共通） */
 .info-card {
   background-color: rgb(228, 228, 228);
   padding: 14px;
   font-size: small;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
-
-/* 左の大画像・中央の小画像2枚 */
+/* 画像 */
 .main_sub_base img,
+.sub_sub_base .frame > img,
 .sub_sub_image {
+  position: absolute; /* 親基準でぴったり配置 */
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
+  object-fit: cover; /* 全面表示でトリミング */
+  object-position: center;
 }
-
-/* 左の大画像は比率を固定（見た目を近づける） */
 .main_sub_base {
+  position: relative;
+  width: 100%;
+  /* 比率は既存のまま */
   aspect-ratio: 4 / 5;
-} /* 好みで調整 */
-
-/* 中央は2段積み */
+  height: auto; /* 比率で高さを決める */
+  min-height: 0;
+  overflow: hidden; /* ← はみ出しカット */
+}
 .sub_sub_base {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 16px;
+  gap: 12px;
+  height: 100%;
+  min-height: 0;
 }
 .sub_sub_base .frame {
-  aspect-ratio: 4 / 3;
-} /* 小画像の比率。好みで */
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 5; /* 既存の比率 */
+  height: auto;
+  min-height: 0;
+  overflow: hidden; /* ← はみ出しカット */
+}
 
-/* 購入ブロックの中の細部（任意で調整） */
+/* カート（商品説明側） */
 .store_cart form {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -536,42 +546,23 @@ button {
   padding: 8px 14px;
 }
 
-/* レスポンシブ：幅が狭いときは縦積み */
-@media (max-width: 900px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-  .sub_sub_base {
-    grid-template-rows: none;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-
-/* ------------------- store リフィル ------------------- */
-/* ===== 3カード並び（既存レイアウトと独立） ===== */
-
+/* ---------- Refill ---------- */
 .store-fotoflame .store-catalog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 35px;
 }
-
 .catalog-card {
   display: grid;
-  grid-template-rows: auto 1fr; /* 上:画像 / 下:本文 */
+  grid-template-rows: auto 1fr;
   gap: 15px;
 }
-
-/* 額縁っぽい白箱の中に画像 */
 .catalog-card__image img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5; /* 好みで 3/4 などに変更可 */
+  aspect-ratio: 4 / 5;
   object-fit: cover;
 }
-
-/* 下の説明カード */
 .catalog-card__body {
   background-color: rgb(228, 228, 228);
   padding: 14px 16px;
@@ -584,7 +575,6 @@ button {
   margin-bottom: 4px;
 }
 
-/* フォームは数量→ボタンを横並びに */
 .catalog-card__form {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -607,31 +597,15 @@ button {
   background: #f7f7f7;
 }
 
-
-
-/* レスポンシブ */
-@media (max-width: 1024px) {
-  .store-fotoflame .store-catalog-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 640px) {
-  .store-fotoflame .store-catalog-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* ========================================== Modal (gallery / mypage) ========================================== */
-/* オーバレイ時の位置設定 */
 .myModal {
-  overflow: auto; /* ← これで画面内に収まらない時に全体スクロール */
-  overscroll-behavior: contain; /* 背景への突き抜けを抑制 */
-  -webkit-overflow-scrolling: touch; /* iOS慣性スクロール */
-
+  overflow: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   position: fixed;
   inset: 0;
   z-index: 1000;
-  display: none; /* デフォルト非表示 */
+  display: none;
   place-items: center;
 }
 .myModal.is-open {
@@ -645,32 +619,25 @@ button {
   width: 720px;
   height: 600px;
   box-shadow: 0 20px 60px rgba(62, 62, 62, 0.35);
-  display: grid; /* ← ここを明示 */
-  grid-template-columns: 420px 1fr; /* 左=写真 幅固定 / 右=可変 */
-  align-items: start; /* 縦も揃える */
-  column-gap: 0; /* 重ねたいので隙間ゼロ */
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  align-items: start;
+  column-gap: 0;
 }
-
 .caption-base {
   grid-column: 2;
-  position: relative; /* z-indexを効かせるため */
-  z-index: 2; /* 写真より上 */
+  position: relative;
+  z-index: 2;
   width: 330px;
   height: 95%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  /* ここが“重なり”の肝 */
-  margin-left: -80px; /* ← 左に食い込ませる（重なり量） */
-  /* 好みで上下位置も微調整可
-  margin-top: 8px;
-  */
-
+  margin-left: -80px;
 }
 .caption-padding {
-  box-sizing: border-box;
   background-color: rgb(255, 255, 255);
-  height: 95%; /* 親（.caption-base）いっぱいに */
-  padding: 24px 60px 24px 90px; /* 下にもパディングを付ける */
-  display: flex; /* ← 縦積み開始 */
+  height: 95%;
+  padding: 24px 60px 24px 90px;
+  display: flex;
   flex-direction: column;
   gap: 10px;
 }
@@ -678,7 +645,6 @@ button {
   margin-top: 140px;
   text-align: center;
 }
-/* タイトル・コメント */
 #galleryTitle {
   font-size: clamp(16px, 2.2vw, 18px);
   border-bottom: solid 2px;
@@ -694,27 +660,23 @@ button {
   margin-bottom: 10px;
 }
 
-/* 親：アイコン枠（flexしない＆固定サイズ） */
 .user_icon_base {
-  flex: 0 0 auto; /* 画像枠が縮んだり伸びたりしない */
-  overflow: hidden; /* はみ出しカット */
+  flex: 0 0 auto;
+  overflow: hidden;
   display: inline-block;
   width: 30px;
   height: 30px;
-  border-radius: 50%; /* 角丸（丸にしたい時は 50% に） */
+  border-radius: 50%;
   line-height: 0;
 }
-
 #userPage {
   color: #fff;
 }
-
-/* 子：画像を枠いっぱいにフィット＆中央トリミング */
 .modal_user_icon {
   width: 100%;
   height: 100%;
-  display: block; /* 画像下の隙間を消す */
-  object-fit: cover; /* アスペクト維持で全面表示 */
+  display: block;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -726,45 +688,39 @@ button {
   text-align: center;
   padding: 10px;
   margin-bottom: 10px;
-
-  cursor: pointer; /* 手のひらカーソル */
+  cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s, transform 0.05s;
   border-radius: 3px;
 }
 .caption-user:hover {
-  background-color: #737373; /* 濃く */
+  background-color: #737373;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 .caption-user:active {
   transform: translateY(1px);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset;
 }
-
-/* 中のテキスト色（必要なら） */
 .caption-user #userPage {
-  color: #fff; /* 既存でOKなら不要 */
+  color: #fff;
   text-decoration: none;
 }
 
-/* 左：写真側。勝手な余白を消して中央に */
 .modal_main_photo {
   grid-column: 1;
   margin-left: 30px;
   justify-self: center;
   align-self: center;
-  position: relative; /* ← 追加：z-indexを効かせる */
-  z-index: 3; /* ← キャプションより前 */
+  position: relative;
+  z-index: 3;
 }
 .modalPhoto_frame_base {
   background-color: #ffffff;
-
   position: relative;
-  width: 330px; /* 額縁の実幅（好みで調整） */
+  width: 330px;
   aspect-ratio: 29.25 / 42.3;
-  z-index: 1; /* 下のレイヤー */
+  z-index: 1;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
-
 .modalPhoto_frame {
   position: absolute;
   inset: 0;
@@ -792,18 +748,15 @@ button {
   object-position: center;
 }
 
-/* カートUI（モーダル内） */
 .caption-cart {
-  display: block; /* すでに flex の指定があっても上書きしてOK */
+  display: block;
   padding-bottom: 20px;
 }
-
-/* フォーム内を横並びにして、ボタンだけ右端へ */
 .caption-cart form {
   display: flex;
   align-items: center;
   width: 100%;
-  gap: 8px; /* 任意 */
+  gap: 8px;
 }
 #cart-quantity {
   width: 40px;
@@ -811,7 +764,6 @@ button {
   border: 1px solid #d1d5db;
   border-radius: 3px;
 }
-
 .add-cart {
   appearance: none;
   display: inline-flex;
@@ -852,8 +804,32 @@ button {
   box-shadow: none;
 }
 
+/* ===================== Media Queries ===================== */
+/* store レイアウト（幅が狭いときは縦積み） */
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .sub_sub_base {
+    grid-template-rows: none;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Refill カードの列数 */
+@media (max-width: 1024px) {
+  .store-fotoflame .store-catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .store-fotoflame .store-catalog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Modal: モバイル表示 */
 @media (max-width: 720px) {
-  /* ← ここが肝。grid をやめて縦並びに強制 */
   .modal {
     display: flex !important;
     flex-direction: column;
@@ -864,8 +840,6 @@ button {
     padding: 12px 0;
     gap: 14px;
   }
-
-  /* 並び順とサイズ */
   .modal_main_photo {
     order: 1;
     margin-left: 0;
@@ -874,21 +848,17 @@ button {
   .caption-base {
     order: 2;
     width: calc(100% - 24px);
-    margin-left: 0; /* 重なり解除 */
+    margin-left: 0;
     height: auto;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   }
   .modalPhoto_frame_base {
     width: min(86vw, 420px);
   }
-
-  /* 下段は上下に積む */
   .caption-bottom {
     flex-direction: column;
     align-items: stretch;
   }
-
-  /* ユーザーを上に、カートを下に */
   .caption-user {
     order: -1;
     justify-content: center;
@@ -899,7 +869,7 @@ button {
     display: flex;
     align-items: center;
     gap: 10px;
-    flex-direction: row; /* 数量→ボタンの横並びは維持 */
+    flex-direction: row;
   }
   #cart-quantity {
     width: 54px;
@@ -916,9 +886,8 @@ button {
   }
 }
 
-/* ====== さらに狭い端末（～380px目安）の微調整 ====== */
+/* Modal: さらに狭い端末 */
 @media (max-width: 380px) {
-  /* （720pxと同じ方針のまま細かい寸法だけ調整） */
   .modalPhoto_frame_base {
     width: 86vw;
   }
@@ -934,13 +903,13 @@ button {
   }
 }
 
-/* PC 横並び時に確実に下端に合わせる土台づくり */
+/* Modal: PC 横並び時の調整 */
 @media (min-width: 721px) {
   .modal {
-    align-items: stretch; /* 行の高さに合わせて子を伸ばす（重要） */
+    align-items: stretch;
   }
   .modal_main_photo {
-    align-self: stretch; /* 高さを揃えて見た目安定（任意） */
+    align-self: stretch;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -951,13 +920,11 @@ button {
     min-height: 0;
   }
   .caption-padding {
-    flex: 1 1 auto; /* キャプション箱を行高いっぱいに */
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     min-height: 0;
   }
-
-  /* ← ここが肝。caption-topが“上段ブロック”として下を押し下げる */
   .caption-top {
     margin-bottom: auto;
   }
