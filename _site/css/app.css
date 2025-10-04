@@ -28,16 +28,17 @@ button {
 #footer {
   background-color: rgb(145, 145, 145);
   width: 100%;
-  height: 15vw;
+  height: 200px;
   padding-top: 2.5vw;
+  padding-bottom: 20vw;
 }
 #logo_footer {
   margin-left: auto;
   margin-right: auto;
-  width: 30vw;
+  width: 500px;
 }
 .logo_footer {
-  width: 30vw;
+  width: 500px;
 }
 .menu_footer_base {
   margin-top: 1vw;
@@ -49,7 +50,7 @@ button {
 .menu_footer {
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.5vw;
+  font-size: 15px;
   color: #000;
 }
 .logo_sns_base {
@@ -72,7 +73,7 @@ button {
   z-index: 9999;
 }
 #header_space {
-  height: 2.5vw;
+  height: 5vh;
   background-color: #fff;
 }
 #header_home_space {
@@ -106,8 +107,7 @@ button {
   width: 100%;
 }
 .header_logo_base {
-  width: 18vw;
-  position: fixed;
+  width: 30vw;
   top: 3px;
   z-index: 10;
   margin-left: 1.3vw;
@@ -152,10 +152,32 @@ button {
   --btn-size: 40px;
 }
 
-.store-hamburger {
+.store-actions{
   position: absolute;
   top: var(--sh-pad);
   right: var(--sh-pad);
+  display: flex;
+  align-items: center;
+  gap: 10px;            /* ← 並びのすき間 */
+}
+
+/* ラッパー内に入ったら“通常フロー”に変更して横並びに参加 */
+.store-actions .store-hamburger{
+  position: static;
+  top: auto;
+  right: auto;
+}
+
+/* カートアイコンの見た目（必要に応じてサイズ調整） */
+.hamburger-store-cart_logo{
+  display: inline-block;
+  inline-size: var(--btn-size);
+  block-size: var(--btn-size);
+  object-fit: contain;
+}
+
+.store-hamburger {
+  position: absolute;
   width: var(--btn-size);
   height: var(--btn-size);
   display: grid;
@@ -181,8 +203,8 @@ button {
   position: absolute;
   top: var(--sh-pad);
   right: var(--sh-pad);
-  width: max-content;
-  min-width: 180px;
+  width: 105px;
+  min-width: 105px;
   display: grid;
   gap: 6px;
   padding: 10px 14px;
@@ -198,53 +220,23 @@ button {
   font-size: 15px;
 }
 
-@media (min-width: 960px) {
-  .store-nav {
-    position: absolute;
-    top: calc(var(--sh-pad) + var(--btn-size));
-    right: var(--sh-pad);
-    width: max-content;
-    min-width: 220px;
-    display: grid !important;
-    gap: 8px;
-    padding: 12px 16px;
-    background: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    transform-origin: top right;
-  }
-  .store-nav[hidden] {
-    display: none !important;
-  }
-}
-
-/* PC表示でも縦積みにする */
-@media (min-width: 901px) {
-  .store_cart form {
-    grid-template-columns: 1fr; /* ← 1列に */
-    row-gap: 10px; /* 既存gapと同等の間隔 */
-  }
-  .store_cart input[type="number"],
-  .store_cart button {
-    width: 100%;
-    justify-self: stretch; /* 横幅いっぱいに */
-  }
-}
-
 /* ===================== Index (hero) ===================== */
 .home_main_body {
   background-color: #fff;
   display: flex;
 }
 .home_main_text {
-  width: 30%;
+  width: 10%;
 }
 .home_main_image {
-  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 90vh;
+  background-color: #fff;
+  padding-bottom: 10vh;
 }
 .home_main {
-  margin-left: auto;
+
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -320,10 +312,11 @@ button {
 /* タイトル＆検索 */
 .category {
   width: 100%;
-  background-color: #fff;
+   background-color: rgb(82, 82, 82);
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 12px;
+
+  margin-bottom: 50px;
 }
 .category_name {
   font-family: "Charter";
@@ -394,6 +387,7 @@ button {
 /* 共有 */
 #store-back {
   background-color: rgb(196, 196, 196);
+  padding-bottom: 30px;
 }
 .product-title {
   display: flex;
@@ -451,7 +445,6 @@ button {
   min-height: 68vh;
   max-width: 1200px;
   margin: 0 auto;
-  border-radius: 8px;
 }
 
 /* 3カラム */
@@ -520,29 +513,34 @@ button {
   height: 100%;
   min-height: 0;
 }
+
 .sub_sub_base .frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 5 / 5; /* 既存の比率 */
-  height: auto;
+  height: 100%; /* ← 行の高さにフィット（PC幅） */
   min-height: 0;
   overflow: hidden; /* ← はみ出しカット */
+  /* aspect-ratio はPCでは使わない */
 }
 
 /* カート（商品説明側） */
-.store_cart form {
+.store_cart .catalog-card__form {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr; /* 縦積み */
+  grid-auto-flow: row;
   gap: 10px;
-  align-items: center;
+  align-items: center; /* 高さ方向は中央に */
+  justify-items: end; /* ← 子要素を右揃え */
   margin-top: 10px;
 }
-.store_cart input[type="number"] {
-  max-width: 50px;
-  justify-self: start;
+.store_cart .catalog-card__form input[type="number"] {
+  width: auto; /* ← 幅は内容に応じる */
+  min-width: 70px; /* 最低幅（任意調整） */
+  text-align: right; /* 入力数値を右寄せ（好みで） */
 }
-.store_cart button {
-  justify-self: end;
+.store_cart .catalog-card__form button {
+  width: auto; /* ← ボタンも自サイズ */
+  justify-self: end; /* 右寄せ */
   padding: 8px 14px;
 }
 
@@ -576,17 +574,26 @@ button {
 }
 
 .catalog-card__form {
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;                 /* ← 横並びに */
+  flex-wrap: nowrap;
   gap: 10px;
   align-items: center;
+  justify-content: flex-end;     /* ← 右寄せ */
   margin-top: 6px;
 }
 .catalog-card__form input[type="number"] {
-  max-width: 100px;
+  inline-size: 3ch;            /* 6桁ぶんの幅（お好みで 4ch, 8ch に変更） */
+  min-inline-size: 64px;       /* 最小幅のガード（任意で調整） */
+  max-inline-size: 120px;      /* 最大幅のガード（不要なら削除） */
   padding: 6px 8px;
+  text-align: right;
+  flex: 0 0 auto;  
+}
+.store_cart .catalog-card__form input[type="number"]{
+  inline-size: 3ch; 
 }
 .catalog-card__form button {
+  width: auto;                   /* ← ボタンも自サイズ */
   padding: 8px 14px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -805,14 +812,67 @@ button {
 }
 
 /* ===================== Media Queries ===================== */
+
 /* store レイアウト（幅が狭いときは縦積み） */
-@media (max-width: 900px) {
+@media (max-width: 1020px) {
   .product-grid {
     grid-template-columns: 1fr;
   }
   .sub_sub_base {
     grid-template-rows: none;
     grid-template-columns: 1fr 1fr;
+    height: auto;
+  }
+  .sub_sub_base .frame {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* ---- 1020px以下で info-card を横並び（2カラム）に ---- */
+  .info_col {
+    display: grid; /* 既定の grid を残しつつ、列定義を2カラムに */
+    grid-template-rows: none; /* 行の固定を解除 */
+    grid-template-columns: 3fr 1fr; /* ← 2カラムで横並び */
+    gap: 12px; /* カード間の余白 */
+    align-items: stretch; /* 高さをそろえる */
+    min-height: 0;
+  }
+  .info_col > .info-card {
+    min-width: 0; /* はみ出し防止 */
+    min-height: 0;
+  }
+  /* 見出しが高すぎると潰れるのを防ぐ微調整（任意） */
+  .info_col .product-title {
+    margin-top: 0;
+  }
+}
+/* 745px以下では再び縦積み（1カラム）に戻す */
+@media (max-width: 745px) {
+  .info_col {
+    grid-template-columns: 1fr; /* ← 1カラム */
+    grid-template-rows: none;
+    gap: 12px;
+  }
+
+  /* 745px以下：カート内は“数量＋ボタン”を横並びに（右寄せ） */
+  .store_cart .catalog-card__form {
+    display: flex; /* ← 横積み */
+    flex-wrap: nowrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end; /* ← 親カード内で右寄せ */
+    width: 100%; /* カード幅に合わせる（右端寄せを維持） */
+    margin-left: 0; /* 念のためリセット（上位が auto の場合に備え） */
+  }
+  .store_cart .catalog-card__form input[type="number"] {
+    width: auto; /* 自然な幅 */
+    min-width: 72px; /* 指で操作しやすい最小幅 */
+    text-align: right; /* 数値を右寄せ（任意） */
+  }
+  
+  .store_cart .catalog-card__form button {
+    width: auto; /* 自然な幅 */
+    padding: 10px 14px;
   }
 }
 
@@ -822,14 +882,14 @@ button {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 1020px) {
   .store-fotoflame .store-catalog-grid {
     grid-template-columns: 1fr;
   }
 }
 
 /* Modal: モバイル表示 */
-@media (max-width: 720px) {
+@media (max-width: 1020px) {
   .modal {
     display: flex !important;
     flex-direction: column;
@@ -904,7 +964,7 @@ button {
 }
 
 /* Modal: PC 横並び時の調整 */
-@media (min-width: 721px) {
+@media (min-width: 1060px) {
   .modal {
     align-items: stretch;
   }

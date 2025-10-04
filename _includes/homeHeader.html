@@ -10,30 +10,35 @@
     </div>
   </a>
 
-  <div class="header_home_flex">
-    <div id="header_menu_base">
-      <!-- Left Side Of Navbar -->
-
-      <!-- Right Side Of Navbar -->
-      <!-- Authentication Links -->
-      <a href="gallery.html" class="menu">gallery</a>
-      <!-- <a href="/all/exhibition" class="menu">exhibition</a> -->
-      <a href="store.html" class="menu">store</a>
-      <a class="menu" href="login.html">login</a>
-      <a class="menu" href="register.html">新規登録</a>
-    </div>
-
-    <a
-      class="user_icon_base"
-      href="mypage.html"
-      role="button"
-      aria-haspopup="true"
+  <!-- ハンバーガー -->
+  <div class="store-actions">
+    <!-- カートアイコン -->
+    <a class="hamburger-store-cart_logo" href="cart.html">🛒</a>
+    <!-- ハンバーガー -->
+    <button
+      class="store-hamburger"
       aria-expanded="false"
-      v-pre
+      aria-controls="store-global-nav"
+      aria-label="メニューを開閉"
     >
-      <!-- ユーザーアイコン表示（必要に応じて <img> を配置） -->
-    </a>
+      <span class="store-hamburger_line" aria-hidden="true"></span>
+      <span class="store-hamburger_line" aria-hidden="true"></span>
+      <span class="store-hamburger_line" aria-hidden="true"></span>
+    </button>
   </div>
+
+  <!-- ナビ（初期はhidden） -->
+  <nav id="store-global-nav" class="store-nav" hidden>
+    <a href="{{ '/index.html' | relative_url }}" class="store-menu">top</a>
+    <a href="{{ '/gallery.html'  | relative_url }}" class="store-menu"
+      >gallery</a
+    >
+    <a href="{{ '/store.html'    | relative_url }}" class="store-menu">store</a>
+    <a href="{{ '/login.html'    | relative_url }}" class="store-menu">login</a>
+    <a href="{{ '/register.html' | relative_url }}" class="store-menu"
+      >新規登録</a
+    >
+  </nav>
 
   <div id="header_home_space"></div>
 </div>

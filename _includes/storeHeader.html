@@ -12,26 +12,33 @@
 </div> -->
 
 <div id="store-header" class="store-header" data-show-offset="0">
-
+  <!-- ハンバーガー -->
+  <div class="store-actions">
+    <!-- カートアイコン -->
+    <a class="hamburger-store-cart_logo" href="cart.html">🛒</a>
     <!-- ハンバーガー -->
-    <button class="store-hamburger"
-            aria-expanded="false"
-            aria-controls="store-global-nav"
-            aria-label="メニューを開閉">
-      <span class="store-hamburger_line" aria-hidden="true"></span>
-      <span class="store-hamburger_line" aria-hidden="true"></span>
-      <span class="store-hamburger_line" aria-hidden="true"></span>
-    </button>
+    <button
+    class="store-hamburger"
+    aria-expanded="false"
+    aria-controls="store-global-nav"
+    aria-label="メニューを開閉"
+  >
+    <span class="store-hamburger_line" aria-hidden="true"></span>
+    <span class="store-hamburger_line" aria-hidden="true"></span>
+    <span class="store-hamburger_line" aria-hidden="true"></span>
+  </button>
+  </div>
 
-    <!-- ナビ（初期はhidden） -->
-    <nav id="store-global-nav" class="store-nav" hidden>
-        <a href="{{ '/index.html' | relative_url }}" class="store-menu">top</a>
-      <a href="{{ '/gallery.html'  | relative_url }}" class="store-menu">gallery</a>
-      <a href="{{ '/store.html'    | relative_url }}" class="store-menu">store</a>
-      <a href="{{ '/login.html'    | relative_url }}" class="store-menu">login</a>
-      <a href="{{ '/register.html' | relative_url }}" class="store-menu">新規登録</a>
-      <a href="{{ '/cart.html'     | relative_url }}" class="store-menu store-cart_logo">🛒</a>
-    </nav>
-
+  <!-- ナビ（初期はhidden） -->
+  <nav id="store-global-nav" class="store-nav" hidden>
+    <a href="{{ '/index.html' | relative_url }}" class="store-menu">top</a>
+    <a href="{{ '/gallery.html'  | relative_url }}" class="store-menu"
+      >gallery</a
+    >
+    <a href="{{ '/store.html'    | relative_url }}" class="store-menu">store</a>
+    <a href="{{ '/login.html'    | relative_url }}" class="store-menu">login</a>
+    <a href="{{ '/register.html' | relative_url }}" class="store-menu"
+      >新規登録</a
+    >
+  </nav>
 </div>
-
