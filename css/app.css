@@ -72,12 +72,9 @@ button {
   position: relative;
   z-index: 9999;
 }
+
 #header_space {
   height: 5vh;
-  background-color: #fff;
-}
-#header_home_space {
-  height: 7vw;
   background-color: #fff;
 }
 
@@ -107,11 +104,11 @@ button {
   width: 100%;
 }
 .header_logo_base {
-  width: 30vw;
+  width: 100vw;
   top: 3px;
   z-index: 10;
-  margin-left: 1.3vw;
-  margin-top: 0.5vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 .header_logo {
   width: 100%;
@@ -151,25 +148,24 @@ button {
   --sh-pad: 8px;
   --btn-size: 40px;
 }
+.contents-hamburger {
+  display: flex;
+  /* gap: 5px;            ← 並びのすき間 */
+}
 
-.store-actions{
+.store-actions {
   position: absolute;
   top: var(--sh-pad);
   right: var(--sh-pad);
   display: flex;
   align-items: center;
-  gap: 10px;            /* ← 並びのすき間 */
+  gap: 10px; /* ← 並びのすき間 */
 }
 
 /* ラッパー内に入ったら“通常フロー”に変更して横並びに参加 */
-.store-actions .store-hamburger{
-  position: static;
-  top: auto;
-  right: auto;
-}
 
 /* カートアイコンの見た目（必要に応じてサイズ調整） */
-.hamburger-store-cart_logo{
+.hamburger-store-cart_logo {
   display: inline-block;
   inline-size: var(--btn-size);
   block-size: var(--btn-size);
@@ -177,7 +173,6 @@ button {
 }
 
 .store-hamburger {
-  position: absolute;
   width: var(--btn-size);
   height: var(--btn-size);
   display: grid;
@@ -236,7 +231,6 @@ button {
   padding-bottom: 10vh;
 }
 .home_main {
-
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -244,17 +238,16 @@ button {
 
 /* ===================== Shared container ===================== */
 .all_back {
-  margin-left: 3vw;
-  margin-right: 3vw;
+  padding:0 10vw 7vh 10vw;
+  background-color: rgb(196, 196, 196);
 }
 
 /* ===================== Gallery ===================== */
 .back_base {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: 5vw;
   width: 100%;
-  padding-bottom: 3vw;
 }
 @media (min-width: 980px) {
   .back_base {
@@ -262,18 +255,20 @@ button {
   }
 }
 .block_base {
-  width: 20vw;
+  width: 100%;
   aspect-ratio: 29.25 / 42.3;
   position: relative;
   display: block;
-  margin-bottom: 20px;
 }
 .photo_frame_base {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 中央へオフセット */
   width: 100%;
   height: 100%;
   box-shadow: 2px 2px 4px rgb(128 128 128 / 60%);
+  margin: auto;
 }
 .photo_frame {
   width: 100%;
@@ -296,12 +291,6 @@ button {
   height: 100%;
   object-fit: cover;
 }
-.main_image_base {
-  height: 30vw;
-  width: 100vw;
-  margin-right: 1.5vw;
-  margin-bottom: 1.5vw;
-}
 .main_image {
   width: 100%;
   height: 100%;
@@ -310,13 +299,20 @@ button {
 }
 
 /* タイトル＆検索 */
+#category_base {
+background-color: rgb(196, 196, 196);
+  padding: 2vw 10vw;
+  
+}
 .category {
-  width: 100%;
-   background-color: rgb(82, 82, 82);
+  /* 親にパディングを移したので幅はそのまま */
   display: flex;
   flex-wrap: wrap;
-
-  margin-bottom: 50px;
+  background-color: rgb(196, 196, 196);
+  border-bottom: solid 1px #373737;
+  margin: 0;              /* ← 横マージンを消す */
+  width: 100%;            /* ← 親のパディング内で100%なので溢れない */
+  box-sizing: border-box;
 }
 .category_name {
   font-family: "Charter";
@@ -574,26 +570,26 @@ button {
 }
 
 .catalog-card__form {
-  display: flex;                 /* ← 横並びに */
+  display: flex; /* ← 横並びに */
   flex-wrap: nowrap;
   gap: 10px;
   align-items: center;
-  justify-content: flex-end;     /* ← 右寄せ */
+  justify-content: flex-end; /* ← 右寄せ */
   margin-top: 6px;
 }
 .catalog-card__form input[type="number"] {
-  inline-size: 3ch;            /* 6桁ぶんの幅（お好みで 4ch, 8ch に変更） */
-  min-inline-size: 64px;       /* 最小幅のガード（任意で調整） */
-  max-inline-size: 120px;      /* 最大幅のガード（不要なら削除） */
+  inline-size: 3ch; /* 6桁ぶんの幅（お好みで 4ch, 8ch に変更） */
+  min-inline-size: 64px; /* 最小幅のガード（任意で調整） */
+  max-inline-size: 120px; /* 最大幅のガード（不要なら削除） */
   padding: 6px 8px;
   text-align: right;
-  flex: 0 0 auto;  
+  flex: 0 0 auto;
 }
-.store_cart .catalog-card__form input[type="number"]{
-  inline-size: 3ch; 
+.store_cart .catalog-card__form input[type="number"] {
+  inline-size: 3ch;
 }
 .catalog-card__form button {
-  width: auto;                   /* ← ボタンも自サイズ */
+  width: auto; /* ← ボタンも自サイズ */
   padding: 8px 14px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -869,7 +865,7 @@ button {
     min-width: 72px; /* 指で操作しやすい最小幅 */
     text-align: right; /* 数値を右寄せ（任意） */
   }
-  
+
   .store_cart .catalog-card__form button {
     width: auto; /* 自然な幅 */
     padding: 10px 14px;

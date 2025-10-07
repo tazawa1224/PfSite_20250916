@@ -9,35 +9,61 @@
     </div>
   </a>
 
-  <!-- ハンバーガー -->
-  <div class="store-actions">
-    <!-- カートアイコン -->
-    <a class="hamburger-store-cart_logo" href="cart.html">🛒</a>
-    <!-- ハンバーガー -->
-    <button
-      class="store-hamburger"
-      aria-expanded="false"
-      aria-controls="store-global-nav"
-      aria-label="メニューを開閉"
-    >
-      <span class="store-hamburger_line" aria-hidden="true"></span>
-      <span class="store-hamburger_line" aria-hidden="true"></span>
-      <span class="store-hamburger_line" aria-hidden="true"></span>
-    </button>
+  <div id="category_base">
+    <header class="category">
+      <h1 class="category_name">gallery</h1>
+
+      <div class="search" role="search">
+        <!-- <a class="new_post" href="./photo/create">新規投稿</a> -->
+        <form
+          class="search_form"
+          action="./search/user"
+          method="POST"
+          aria-label="ユーザー検索"
+        >
+          <input
+            type="hidden"
+            name="_token"
+            value="lNaUVnT0k07u4w5q9EeVXp9KcLp3l150J0QzYHXH"
+          />
+          <label for="gallery-keyword" class="search_title">search</label>
+          <input id="gallery-keyword" name="keyword" type="text" />
+        </form>
+      </div>
+
+      <!-- ハンバーガー -->
+      <div class="contents-hamburger">
+        <!-- カートアイコン -->
+        <a class="hamburger-store-cart_logo" href="cart.html">🛒</a>
+        <!-- ハンバーガー -->
+        <button
+          class="store-hamburger"
+          aria-expanded="false"
+          aria-controls="store-global-nav"
+          aria-label="メニューを開閉"
+        >
+          <span class="store-hamburger_line" aria-hidden="true"></span>
+          <span class="store-hamburger_line" aria-hidden="true"></span>
+          <span class="store-hamburger_line" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <!-- ナビ（初期はhidden） -->
+      <nav id="store-global-nav" class="store-nav" hidden>
+        <a href="{{ '/index.html' | relative_url }}" class="store-menu">top</a>
+        <a href="{{ '/gallery.html'  | relative_url }}" class="store-menu"
+          >gallery</a
+        >
+        <a href="{{ '/store.html'    | relative_url }}" class="store-menu"
+          >store</a
+        >
+        <a href="{{ '/login.html'    | relative_url }}" class="store-menu"
+          >login</a
+        >
+        <a href="{{ '/register.html' | relative_url }}" class="store-menu"
+          >新規登録</a
+        >
+      </nav>
+    </header>
   </div>
-
-  <!-- ナビ（初期はhidden） -->
-  <nav id="store-global-nav" class="store-nav" hidden>
-    <a href="{{ '/index.html' | relative_url }}" class="store-menu">top</a>
-    <a href="{{ '/gallery.html'  | relative_url }}" class="store-menu"
-      >gallery</a
-    >
-    <a href="{{ '/store.html'    | relative_url }}" class="store-menu">store</a>
-    <a href="{{ '/login.html'    | relative_url }}" class="store-menu">login</a>
-    <a href="{{ '/register.html' | relative_url }}" class="store-menu"
-      >新規登録</a
-    >
-  </nav>
-
-  <div id="header_space"></div>
 </div>
