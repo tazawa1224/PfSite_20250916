@@ -35,10 +35,10 @@ button {
 #logo_footer {
   margin-left: auto;
   margin-right: auto;
-  width: 500px;
+  width: 100%;
 }
 .logo_footer {
-  width: 500px;
+  width: 100%;
 }
 .menu_footer_base {
   margin-top: 1vw;
@@ -711,7 +711,6 @@ button {
 }
 .caption-top {
   margin-top: 80px;
-  text-align: center;
 }
 #galleryTitle {
   font-size: clamp(16px, 2.2vw, 18px);
@@ -722,6 +721,7 @@ button {
   font-weight: bold;
   padding: 5px;
   margin: 5px;
+  text-align: center;
 }
 #galleryComment {
   font-size: clamp(12px, 1.8vw, 14px);
