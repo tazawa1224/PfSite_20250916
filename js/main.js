@@ -131,10 +131,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = $(".myModal");
     const modalImg = $("#js-modal-img");
     const modalIcon = $("#js_user_icon");
-    if (!modal || !modalImg || !modalIcon) return;
+    const grid = $(".back_base"); // ← デリゲーションの起点を限定
+    const userIconLink = $(".user_icon_base"); // ← 投稿者アイコンの <a>
+    if (!modal || !modalImg || !modalIcon || !grid) return;
 
     // 画像クリック（イベントデリゲーション）
-    document.addEventListener("click", async (e) => {
+    grid.addEventListener("click", async (e) => {
       const img = e.target.closest(".photo");
       if (!img) return;
 
@@ -144,6 +146,14 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.classList.add("is-open"); // ← これで overlay が grid になり中央寄せ
       document.body.classList.add("no-scroll"); // ← 任意：背面スクロール止める
       modalImg.src = img.src;
+      // dataset で先に即時反映（通信前のプレースホルダ）
+      const presetTitle = img.dataset.title || "";
+      const presetComment = img.dataset.comment || "";
+      const titleEl = $("#galleryTitle");
+      const commentEl = $("#galleryComment");
+      if (titleEl && presetTitle) titleEl.textContent = presetTitle;
+      if (commentEl && presetComment) commentEl.textContent = presetComment;
+      if (presetTitle) modalImg.alt = presetTitle;
 
       // 2) Ajaxでメタ情報を取得して埋める
       try {
@@ -153,13 +163,13 @@ document.addEventListener("DOMContentLoaded", () => {
             "Content-Type": "application/json",
             "X-CSRF-TOKEN": getCsrf(),
           },
-          body: JSON.stringify({ photoId }),
+          // サーバ側に合わせてキー名を 'id' に統一（必要に応じて変更）
+          body: JSON.stringify({ id: photoId }),
         });
         if (!res.ok) throw new Error("HTTP " + res.status);
         const data = await res.json();
 
         const userPage = $("#userPage");
-        const userIconA = $("#userIcon");
         const title = $("#galleryTitle");
         const comment = $("#galleryComment");
         const dlPath = $("#download_path");
@@ -174,11 +184,17 @@ document.addEventListener("DOMContentLoaded", () => {
           userPage.href = `/user/page/${data.user_id}`;
           userPage.textContent = data.user_name ?? "ユーザーページ";
         }
-        if (userIconA) userIconA.href = `/user/page/${data.user_id}`;
+        if (userIconLink)
+          userIconLink.setAttribute("href", `/user/page/${data.user_id}`);
+
         modalIcon.src = data.user_icon_path ?? "";
 
-        if (title) title.textContent = data.title ?? "";
-        if (comment) comment.textContent = data.comment ?? "";
+        // サーバ値 → dataset → 空文字 の順で採用
+        const resolvedTitle = (data.title ?? "").trim() || presetTitle || "";
+        const resolvedComment = (data.comment ?? "").trim() || presetComment || "";
+        if (title) title.textContent = resolvedTitle;
+        if (comment) comment.textContent = resolvedComment;
+        if (resolvedTitle) modalImg.alt = resolvedTitle;
 
         if (dlPath) dlPath.value = `/storage/images/${data.photo_photo || ""}`;
         if (dlPhoto) dlPhoto.value = data.photo_photo ?? "";
@@ -186,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (postDelete) postDelete.href = `/post/delete/${data.photo_id}`;
 
         if (cartPhoto) cartPhoto.value = data.photo_photo ?? "";
-        if (cartName) cartName.value = data.title ?? "";
+        if (cartName) cartName.value = resolvedTitle;
         if (cartId) cartId.value = data.photo_id ?? "";
 
         if (emptyHeart && data.photo_id) {

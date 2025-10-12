@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="store.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   sodipodi:docname="storeアイコン.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.28283473"
+     inkscape:cx="631.11061"
+     inkscape:cy="740.71526"
+     inkscape:window-width="1104"
+     inkscape:window-height="856"
+     inkscape:window-x="38"
+     inkscape:window-y="60"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect16"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 148.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="210 : 148.5 : 1"
+       inkscape:persp3d-origin="105 : 99 : 1"
+       id="perspective1" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       d="m 80.390229,91.448696 v 9.065264 h 60.503531 v -9.065264 z"
+       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#353535;stroke-width:2.28416;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       id="path16" />
+    <path
+       d="M 63.918126,100.51396 V 91.448696 H 19.61166 c -2.503201,2.51e-4 -4.532381,2.029431 -4.532631,4.532631 V 223.41789 c 2.56e-4,2.50319 2.029435,4.53239 4.532631,4.53264 h 177.79835 c 2.50318,-2.5e-4 4.53236,-2.02945 4.53261,-4.53264 V 95.981327 c -2.5e-4,-2.503195 -2.02943,-4.532375 -4.53261,-4.532631 h -40.04414 v 9.065264 h 35.51149 V 218.88527 H 24.14429 V 100.51396 Z"
+       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#353535;stroke-width:2.28416;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       id="path15" />
+    <path
+       style="display:inline;fill:#353535;stroke-linejoin:round"
+       d="m 96.271484,36.099609 c -10.86362,0 -19.53125,9.308511 -19.53125,20.574219 v 16.865234 h 5.4375 V 56.673828 c 0,-8.5179 6.329475,-15.136719 14.09375,-15.136719 7.764276,0 14.093746,6.618818 14.093746,15.136719 v 16.830078 h 5.43555 V 56.673828 c 0,-11.265707 -8.66567,-20.574219 -19.529296,-20.574219 z"
+       id="path12"
+       sodipodi:nodetypes="ssccsssccss"
+       inkscape:original-d="m 96.271484,36.099609 c -10.86362,0 -19.53125,9.308511 -19.53125,20.574219 v 16.865234 h 5.4375 V 56.673828 c 0,-8.5179 6.329475,-15.136719 14.09375,-15.136719 7.764276,0 14.093746,6.618818 14.093746,15.136719 v 16.830078 h 5.43555 V 56.673828 c 0,-11.265707 -8.66567,-20.574219 -19.529296,-20.574219 z"
+       inkscape:path-effect="#path-effect16"
+       transform="matrix(2.2841603,0,0,2.2841603,-109.34995,-39.845326)" />
+  </g>
+</svg>

@@ -81,7 +81,7 @@ button {
 .header_display_flex {
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #fff;
   opacity: 0.9;
   height: 1.5vw;
@@ -94,7 +94,7 @@ button {
 .header_home_flex {
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-start;
   opacity: 0.9;
   height: 5vw;
   position: fixed;
@@ -143,24 +143,39 @@ button {
   box-shadow: none;
   transform: translateY(0);
   transition: background 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+  padding: 8px;
+  margin-right: 7px;
 }
 :root {
   --sh-pad: 8px;
-  --btn-size: 40px;
+  --hh-pad: 10vw;
+  --btn-size: 30px;
 }
 .contents-hamburger {
   display: flex;
-  /* gap: 5px;            ← 並びのすき間 */
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 7px;
+  margin-left: 3px;
 }
 
-.store-actions {
-  position: absolute;
-  top: var(--sh-pad);
-  right: var(--sh-pad);
+.hamburger-group {
   display: flex;
-  align-items: center;
-  gap: 10px; /* ← 並びのすき間 */
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 7px;
+  padding-right: 20px;
 }
+
+/* .home-hamburger-group{
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-end;
+  gap:10px;
+  padding:6px 10px;           
+  background:rgba(0,0,0,.08); 
+} */
 
 /* ラッパー内に入ったら“通常フロー”に変更して横並びに参加 */
 
@@ -170,6 +185,10 @@ button {
   inline-size: var(--btn-size);
   block-size: var(--btn-size);
   object-fit: contain;
+}
+.cart-icon {
+  height: 100%;
+  width: 100%;
 }
 
 .store-hamburger {
@@ -209,10 +228,24 @@ button {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   transform-origin: top right;
 }
-.store-nav .store-menu {
-  display: block;
-  padding: 10px 6px;
-  font-size: 15px;
+
+.home-nav[hidden] {
+  display: none !important;
+}
+.home-nav {
+  position: absolute;
+  top: var(--hh-pad);
+  right: var(--sh-pad);
+  width: 105px;
+  min-width: 105px;
+  display: grid;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform-origin: top right;
 }
 
 /* ===================== Index (hero) ===================== */
@@ -238,7 +271,7 @@ button {
 
 /* ===================== Shared container ===================== */
 .all_back {
-  padding:0 10vw 7vh 10vw;
+  padding: 0 10vw 7vh 10vw;
   background-color: rgb(196, 196, 196);
 }
 
@@ -300,9 +333,8 @@ button {
 
 /* タイトル＆検索 */
 #category_base {
-background-color: rgb(196, 196, 196);
+  background-color: rgb(196, 196, 196);
   padding: 2vw 10vw;
-  
 }
 .category {
   /* 親にパディングを移したので幅はそのまま */
@@ -310,15 +342,16 @@ background-color: rgb(196, 196, 196);
   flex-wrap: wrap;
   background-color: rgb(196, 196, 196);
   border-bottom: solid 1px #373737;
-  margin: 0;              /* ← 横マージンを消す */
-  width: 100%;            /* ← 親のパディング内で100%なので溢れない */
+  margin: 0; /* ← 横マージンを消す */
+  width: 100%; /* ← 親のパディング内で100%なので溢れない */
   box-sizing: border-box;
 }
 .category_name {
   font-family: "Charter";
-  font-size: clamp(20px, 6vw, 48px);
+  font-size: clamp(20px, 10vw, 48px);
   margin-left: 0.5vw;
-  padding-bottom: 0.5vw;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 .search {
   width: fit-content;
@@ -607,7 +640,7 @@ background-color: rgb(196, 196, 196);
   -webkit-overflow-scrolling: touch;
   position: fixed;
   inset: 0;
-  z-index: 1000;
+  z-index: 99999;
   display: none;
   place-items: center;
 }
@@ -617,14 +650,14 @@ background-color: rgb(196, 196, 196);
 
 .modal {
   position: relative;
-  background: rgb(103, 103, 103);
-  border-radius: 3px;
+  background: rgb(214, 214, 214);
+  border-radius: 10px;
   width: 720px;
   height: 600px;
   box-shadow: 0 20px 60px rgba(62, 62, 62, 0.35);
   display: grid;
   grid-template-columns: 420px 1fr;
-  align-items: start;
+  align-items: stretch; /* 子要素をコンテナの高さに合わせて伸ばす */
   column-gap: 0;
 }
 .caption-base {
@@ -632,20 +665,25 @@ background-color: rgb(196, 196, 196);
   position: relative;
   z-index: 2;
   width: 330px;
-  height: 95%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  height: 100%;
+  overflow: hidden; /* 内側に専用スクローラを作るため、外側では隠す */
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
   margin-left: -80px;
 }
 .caption-padding {
   background-color: rgb(255, 255, 255);
-  height: 95%;
-  padding: 24px 60px 24px 90px;
+  height: 100%;
+  max-height: 100%;
+  overflow: auto; /* ここをスクロールコンテナにする */
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  padding: 24px 70px 0px 80px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 .caption-top {
-  margin-top: 140px;
+  margin-top: 80px;
   text-align: center;
 }
 #galleryTitle {
@@ -841,6 +879,83 @@ background-color: rgb(196, 196, 196);
   .info_col .product-title {
     margin-top: 0;
   }
+
+  #cart-quantity {
+    width: 54px;
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+  .add-cart {
+    margin-left: 0;
+    flex: 1 1 auto;
+    justify-content: center;
+    padding: 12px 14px;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+
+  /* モーダルウィンドウ */
+  .modal {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    max-width: 100%;
+    height: auto;
+    padding: 12px 0;
+    gap: 14px;
+  }
+  .modal_main_photo {
+    order: 1;
+    margin-left: 0;
+    align-self: center;
+  }
+
+  .modalPhoto_frame_base {
+    width: 50vw;
+  }
+
+  /* Refill カードの列数 */
+  .store-fotoflame .store-catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .store-fotoflame .store-catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* キャプション修正 */
+  .caption-padding {
+    padding: 0 50px;
+    height: 100%;
+  }
+
+  .caption-base {
+     order: 2;   
+    width: 60vw;
+    margin-left: 0;
+
+    height: 40vh;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+  .caption-top {
+    margin-top: 0;
+  }
+  .caption-bottom {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .caption-user {
+    order: -1;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 14px;
+  }
+  .caption-cart form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row;
+  }
 }
 /* 745px以下では再び縦積み（1カラム）に戻す */
 @media (max-width: 745px) {
@@ -872,93 +987,6 @@ background-color: rgb(196, 196, 196);
   }
 }
 
-/* Refill カードの列数 */
-@media (max-width: 1024px) {
-  .store-fotoflame .store-catalog-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 1020px) {
-  .store-fotoflame .store-catalog-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Modal: モバイル表示 */
-@media (max-width: 1020px) {
-  .modal {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    width: min(92vw, 520px);
-    max-width: 100%;
-    height: auto;
-    padding: 12px 0;
-    gap: 14px;
-  }
-  .modal_main_photo {
-    order: 1;
-    margin-left: 0;
-    align-self: center;
-  }
-  .caption-base {
-    order: 2;
-    width: calc(100% - 24px);
-    margin-left: 0;
-    height: auto;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  }
-  .modalPhoto_frame_base {
-    width: min(86vw, 420px);
-  }
-  .caption-bottom {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .caption-user {
-    order: -1;
-    justify-content: center;
-    gap: 12px;
-    padding: 12px 14px;
-  }
-  .caption-cart form {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-direction: row;
-  }
-  #cart-quantity {
-    width: 54px;
-    padding: 10px 12px;
-    font-size: 16px;
-  }
-  .add-cart {
-    margin-left: 0;
-    flex: 1 1 auto;
-    justify-content: center;
-    padding: 12px 14px;
-    font-size: 15px;
-    border-radius: 8px;
-  }
-}
-
-/* Modal: さらに狭い端末 */
-@media (max-width: 380px) {
-  .modalPhoto_frame_base {
-    width: 86vw;
-  }
-  .caption-padding {
-    padding: 12px;
-  }
-  .caption-user {
-    padding: 10px 12px;
-  }
-  .add-cart {
-    padding: 10px 12px;
-    font-size: 14px;
-  }
-}
-
 /* Modal: PC 横並び時の調整 */
 @media (min-width: 1060px) {
   .modal {
@@ -969,19 +997,5 @@ background-color: rgb(196, 196, 196);
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .caption-base {
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-  }
-  .caption-padding {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-  }
-  .caption-top {
-    margin-bottom: auto;
   }
 }
