@@ -16,6 +16,7 @@
       gtag("config", "G-JVQS05TLKQ");
     </script>
 
+<meta name="api-base" content="http://127.0.0.1:8000">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -28,8 +29,7 @@
     <title>Laravel</title>
 
     <!-- Scripts -->
-    <script src="js/app.js" defer></script>
-
+    <script src="js/app.js" type="module"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="http://fonts.gstatic.com/" />
     <link
@@ -39,11 +39,6 @@
 
     <!-- Styles -->
     <link href="css/app.css" rel="stylesheet" />
-    <link
-      rel="icon"
-      href="/PfSite_20250916/assets/favicon.png"
-      type="image/png"
-    />
   </head>
 
   <body><div id="header">
@@ -81,11 +76,11 @@
       <!-- ハンバーガー -->
       <div class="contents-hamburger">
         <!-- カートアイコン -->
-        <a class="hamburger-store-cart_logo" href="cart.html"
-          ><img
-            class="cart-icon"
-            src="/PfSite_20250916/storage/images/cart_icon.png"
-        /></a>
+        <a
+    class="hamburger-store-cart_logo"
+    href="/PfSite_20250916/store.html"
+    ><img class="cart-icon" src="/PfSite_20250916/storage/images/store.png"
+  /></a>
         <!-- ハンバーガー -->
         <button
           class="store-hamburger"
@@ -100,7 +95,7 @@
       </div>
 
       <!-- ナビ（初期はhidden） -->
-      <nav id="store-global-nav" class="store-nav" hidden>
+      <nav id="store-global-nav" class="contents-nav" hidden>
         <a href="/PfSite_20250916/index.html" class="store-menu">top</a>
         <a href="/PfSite_20250916/gallery.html" class="store-menu"
           >gallery</a
@@ -354,6 +349,6 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js" type="module"></script>
   </body>
 </html>

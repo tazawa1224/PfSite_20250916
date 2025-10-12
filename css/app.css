@@ -149,6 +149,7 @@ button {
 :root {
   --sh-pad: 8px;
   --hh-pad: 10vw;
+  --ch-pad: 10vw;
   --btn-size: 30px;
 }
 .contents-hamburger {
@@ -168,16 +169,26 @@ button {
   padding-right: 20px;
 }
 
-/* .home-hamburger-group{
-  display:flex;
-  align-items:flex-end;
-  justify-content:flex-end;
-  gap:10px;
-  padding:6px 10px;           
-  background:rgba(0,0,0,.08); 
-} */
+.store-menu {
+  display: block; /* クリック領域を広げる */
+  padding: 12px 12px;
+  border-radius: 6px; /* 角丸は好みで */
+  line-height: 1;
+  color: #222;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 12px;
+  text-align: center;
+}
+/* ホバー/フォーカス時の背景色変更 */
+.store-menu:hover,
+.store-menu:focus-visible {
+  background-color: #f0f0f0; /* 好みの色に変更 */
+}
 
-/* ラッパー内に入ったら“通常フロー”に変更して横並びに参加 */
+/* クリック中の見た目（任意） */
+.store-menu:active {
+  background-color: #e5e5e5;
+}
 
 /* カートアイコンの見た目（必要に応じてサイズ調整） */
 .hamburger-store-cart_logo {
@@ -231,11 +242,31 @@ button {
 
 .home-nav[hidden] {
   display: none !important;
+  padding: 5px;
 }
 .home-nav {
   position: absolute;
   top: var(--hh-pad);
   right: var(--sh-pad);
+  width: 105px;
+  min-width: 105px;
+  display: grid;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform-origin: top right;
+}
+.contents-nav[hidden] {
+  display: none !important;
+  padding: 5px;
+}
+.contents-nav {
+  position: absolute;
+  top: var(--hh-pad);
+  right: var(--ch-pad);
   width: 105px;
   min-width: 105px;
   display: grid;
@@ -259,7 +290,7 @@ button {
 .home_main_image {
   margin-left: auto;
   margin-right: auto;
-  height: 90vh;
+  height: 80vh;
   background-color: #fff;
   padding-bottom: 10vh;
 }
@@ -890,7 +921,7 @@ button {
     flex: 1 1 auto;
     justify-content: center;
     padding: 12px 14px;
-    font-size: 15px;
+    font-size: 13px;
     border-radius: 8px;
   }
 
@@ -902,7 +933,7 @@ button {
     width: 80vw;
     max-width: 100%;
     height: auto;
-    padding: 12px 0;
+    padding: 50px 0 30px 0;
     gap: 14px;
   }
   .modal_main_photo {
@@ -930,11 +961,12 @@ button {
   }
 
   .caption-base {
-     order: 2;   
+    order: 2;
     width: 60vw;
     margin-left: 0;
-
-    height: 40vh;
+    padding: 30px 0 30px 0;
+    background-color: rgb(255, 255, 255);
+    height: 30vh;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   }
   .caption-top {
@@ -963,6 +995,10 @@ button {
     grid-template-columns: 1fr; /* ← 1カラム */
     grid-template-rows: none;
     gap: 12px;
+  }
+  .home_main_image {
+    height: 90vh;
+    margin-top: 20px;
   }
 
   /* 745px以下：カート内は“数量＋ボタン”を横並びに（右寄せ） */

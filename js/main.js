@@ -155,62 +155,67 @@ document.addEventListener("DOMContentLoaded", () => {
       if (commentEl && presetComment) commentEl.textContent = presetComment;
       if (presetTitle) modalImg.alt = presetTitle;
 
-      // 2) Ajaxでメタ情報を取得して埋める
-      try {
-        const res = await fetch("/photoAjax", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-CSRF-TOKEN": getCsrf(),
-          },
-          // サーバ側に合わせてキー名を 'id' に統一（必要に応じて変更）
-          body: JSON.stringify({ id: photoId }),
-        });
-        if (!res.ok) throw new Error("HTTP " + res.status);
-        const data = await res.json();
+      // // 2) Ajaxでメタ情報を取得して埋める
+      // try {
+      //   const API =
+      //     document.querySelector('meta[name="api-base"]')?.content || "";
+      //   if (!API) return;
+      //   const res = await fetch(`${API}/photoAjax`, {
+      //     method: "POST",
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //       "X-CSRF-TOKEN": getCsrf(),
+      //     },
+      //     // サーバ側に合わせてキー名を 'id' に統一（必要に応じて変更）
+      //     body: JSON.stringify({ id: photoId }),
+      //   });
+      //   if (!res.ok) throw new Error("HTTP " + res.status);
+      //   const data = await res.json();
 
-        const userPage = $("#userPage");
-        const title = $("#galleryTitle");
-        const comment = $("#galleryComment");
-        const dlPath = $("#download_path");
-        const dlPhoto = $("#download_photo");
-        const postDelete = $("#postDelete");
-        const cartPhoto = $("#cart_photo");
-        const cartName = $("#cart_name");
-        const cartId = $("#cart_id");
-        const emptyHeart = $("#empty-heart");
+      //   const userPage = $("#userPage");
+      //   const title = $("#galleryTitle");
+      //   const comment = $("#galleryComment");
+      //   const dlPath = $("#download_path");
+      //   const dlPhoto = $("#download_photo");
+      //   const postDelete = $("#postDelete");
+      //   const cartPhoto = $("#cart_photo");
+      //   const cartName = $("#cart_name");
+      //   const cartId = $("#cart_id");
+      //   const emptyHeart = $("#empty-heart");
 
-        if (userPage) {
-          userPage.href = `/user/page/${data.user_id}`;
-          userPage.textContent = data.user_name ?? "ユーザーページ";
-        }
-        if (userIconLink)
-          userIconLink.setAttribute("href", `/user/page/${data.user_id}`);
+      //   if (userPage) {
+      //     userPage.href = `/user/page/${data.user_id}`;
+      //     userPage.textContent = data.user_name ?? "ユーザーページ";
+      //   }
+      //   if (userIconLink)
+      //     userIconLink.setAttribute("href", `/user/page/${data.user_id}`);
 
-        modalIcon.src = data.user_icon_path ?? "";
+      //   modalIcon.src = data.user_icon_path ?? "";
 
-        // サーバ値 → dataset → 空文字 の順で採用
-        const resolvedTitle = (data.title ?? "").trim() || presetTitle || "";
-        const resolvedComment = (data.comment ?? "").trim() || presetComment || "";
-        if (title) title.textContent = resolvedTitle;
-        if (comment) comment.textContent = resolvedComment;
-        if (resolvedTitle) modalImg.alt = resolvedTitle;
+      //   // サーバ値 → dataset → 空文字 の順で採用
+      //   const resolvedTitle = (data.title ?? "").trim() || presetTitle || "";
+      //   const resolvedComment =
+      //     (data.comment ?? "").trim() || presetComment || "";
+      //   if (title) title.textContent = resolvedTitle;
+      //   if (comment) comment.textContent = resolvedComment;
+      //   if (resolvedTitle) modalImg.alt = resolvedTitle;
 
-        if (dlPath) dlPath.value = `/storage/images/${data.photo_photo || ""}`;
-        if (dlPhoto) dlPhoto.value = data.photo_photo ?? "";
+      //   if (dlPath) dlPath.value = `/storage/images/${data.photo_photo || ""}`;
+      //   if (dlPhoto) dlPhoto.value = data.photo_photo ?? "";
 
-        if (postDelete) postDelete.href = `/post/delete/${data.photo_id}`;
+      //   if (postDelete) postDelete.href = `/post/delete/${data.photo_id}`;
 
-        if (cartPhoto) cartPhoto.value = data.photo_photo ?? "";
-        if (cartName) cartName.value = resolvedTitle;
-        if (cartId) cartId.value = data.photo_id ?? "";
+      //   if (cartPhoto) cartPhoto.value = data.photo_photo ?? "";
+      //   if (cartName) cartName.value = resolvedTitle;
+      //   if (cartId) cartId.value = data.photo_id ?? "";
 
-        if (emptyHeart && data.photo_id) {
-          emptyHeart.dataset.photoId = String(data.photo_id);
-        }
-      } catch (err) {
-        console.error("photoAjax 取得に失敗:", err);
-      }
+      //   if (emptyHeart && data.photo_id) {
+      //     emptyHeart.dataset.photoId = String(data.photo_id);
+      //   }
+      // } catch (err) {
+      //   console.error("photoAjax 取得に失敗:", err);
+      // }
     });
 
     // 背景クリックで閉じる

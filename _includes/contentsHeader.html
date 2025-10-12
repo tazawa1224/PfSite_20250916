@@ -33,11 +33,11 @@
       <!-- ハンバーガー -->
       <div class="contents-hamburger">
         <!-- カートアイコン -->
-        <a class="hamburger-store-cart_logo" href="cart.html"
-          ><img
-            class="cart-icon"
-            src="/PfSite_20250916/storage/images/cart_icon.png"
-        /></a>
+        <a
+    class="hamburger-store-cart_logo"
+    href="{{ '/store.html'    | relative_url }}"
+    ><img class="cart-icon" src="/PfSite_20250916/storage/images/store.png"
+  /></a>
         <!-- ハンバーガー -->
         <button
           class="store-hamburger"
@@ -52,7 +52,7 @@
       </div>
 
       <!-- ナビ（初期はhidden） -->
-      <nav id="store-global-nav" class="store-nav" hidden>
+      <nav id="store-global-nav" class="contents-nav" hidden>
         <a href="{{ '/index.html' | relative_url }}" class="store-menu">top</a>
         <a href="{{ '/gallery.html'  | relative_url }}" class="store-menu"
           >gallery</a
