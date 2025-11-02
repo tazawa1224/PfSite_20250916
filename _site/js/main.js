@@ -347,4 +347,33 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.key === "Escape" && isOpen()) closeMenu();
     });
   }
+
+  // ===== 9) ヒーロー画像のフェードイン =====
+  (function heroFadeIn() {
+    const img = document.querySelector(".home_main_image .home_main");
+    if (!img) return;
+
+    const addVisibleNextFrame = () => {
+      // クラスを2段階で付与して確実にトランジションを走らせる
+      img.classList.add("will-fade-in");
+      // すでに読み込み済みの場合でも確実にレイアウト反映 → 次フレームで可視化
+      requestAnimationFrame(() => {
+        img.classList.add("is-visible");
+      });
+    };
+
+    if (img.complete && img.naturalWidth > 0) {
+      // キャッシュ済み読み込み
+      addVisibleNextFrame();
+    } else {
+      // ロード後に可視化
+      img.addEventListener("load", addVisibleNextFrame, { once: true });
+      // error時でも見えないままは避けたいのでフォールバック（任意）
+      img.addEventListener(
+        "error",
+        () => img.classList.remove("will-fade-in"),
+        { once: true }
+      );
+    }
+  })();
 });

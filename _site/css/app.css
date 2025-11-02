@@ -996,6 +996,22 @@ button {
     margin-top: 20px;
   }
 
+.will-fade-in {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.will-fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .will-fade-in {
+    transition: none;
+    transform: none;
+  }
+}
+
   /* 745px以下：カート内は“数量＋ボタン”を横並びに（右寄せ） */
   .store_cart .catalog-card__form {
     display: flex;
